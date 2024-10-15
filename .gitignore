@@ -23,3 +23,17 @@ go.work.sum
 
 # env file
 .env
+
+# hello binary
+*/bin
+*/hello
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

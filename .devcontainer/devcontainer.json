@@ -1,0 +1,27 @@
+// For format details, see https://aka.ms/devcontainer.json.
+// json schema: https://containers.dev/implementors/json_schema/
+// Build on https://github.com/adrienaury/go-devcontainer
+{
+	"name": "Go Devcontainer",
+  
+	"image": "adrienaury/go-devcontainer:v5.1.0",
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"customizations": {
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/zsh"
+			},
+			"extensions": ["golang.go"]
+		}
+	},
+  
+	// Needed to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+  
+	// Needed to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+
+	"postCreateCommand": "./.devcontainer/install-dagger.sh"
+  }

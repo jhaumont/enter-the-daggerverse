@@ -1,0 +1,28 @@
+name: CI hello
+on:
+  pull_request:
+    branches:
+      - 'main'
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  CI:
+    name: Publish hello app
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Publish
+        uses: dagger/dagger-for-github@v6
+        with:
+          version: "0.13.5"
+          verb: call
+          workdir: hello
+          args: publish --source=.
+          # assumes the Dagger Cloud token is in
+          # a repository secret named DAGGER_CLOUD_TOKEN
+          # set via the GitHub UI/CLI
+          cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
