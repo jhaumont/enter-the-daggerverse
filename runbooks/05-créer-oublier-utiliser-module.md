@@ -22,7 +22,7 @@ dagger init --sdk=go --source=.
 
 Vous allez devoir construire une fonction `RenovateScan` dans ce module.
 
-Pour se faire, voici un squelette à copier dans le fichier `dagger/main.go` pour remplacer le code existant :
+Pour se faire, voici un squelette à copier dans le fichier `renovate/main.go` pour remplacer le code existant :
 
 ```go
 package main
@@ -74,6 +74,9 @@ Quelques liens intéressants pour vous aider :
 > export RENOVATE_TOKEN
 > ```
 
+> [!TIP]
+> N'oubliez pas la commande `dagger develop` une fois que vous avez terminé votre fonction.
+
 ## Publier le module renovate
 
 > [!NOTE]
@@ -87,6 +90,14 @@ De la même manière que dans la partie précédente, nous allons construire une
 
 > [!NOTE]
 > Utilisez le module Renovate qui a déjà été publié sur le Daggerverse pour ce codelab
+> 
+> La [documentation](https://docs.dagger.io/integrations/github) de l'intégration Dagger pour GitHub
+
+Créez le fichier de la GitHub Actions :
+```bash
+touch ../.github/workflows/renovate.yaml
+```
+
 
 Voici le squelette dans à intégrer dans le fichier :
 

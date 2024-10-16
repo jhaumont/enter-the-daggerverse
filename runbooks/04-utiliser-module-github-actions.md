@@ -15,6 +15,9 @@ Créer une nouvelle branche Git (remplacer `<nom_branche>`):
 git checkout -b <nom_branche>
 ```
 
+> [!NOTE]
+> Ajoutez votre pseudo GitHub dans le nom de votre branche pour éviter les doublons.
+
 Ouvrir le fichier `.github/workflows/CI.yaml` dans VSCode (à trouver dans le panel Explorer sur la gauche).
 
 Modifier la GitHub action `CI hello` - en utilisant l'intégration Dagger pour GitHub Actions - afin d'appeler la fonction `Publish` pour builder et publier l'application.
