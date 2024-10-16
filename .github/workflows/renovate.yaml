@@ -22,7 +22,7 @@ jobs:
           version: "0.13.5"
           verb: call
           workdir: renovate
-          args: renovate-scan --repository="jhaumont/enter-the-daggerverse" --base-branche="jhaumont/init" --renovate-token=env:RENOVATE_TOKEN
+          args: renovate-scan --repository="jhaumont/enter-the-daggerverse" --renovate-token=env:RENOVATE_TOKEN
           # assumes the Dagger Cloud token is in
           # a repository secret named DAGGER_CLOUD_TOKEN
           # set via the GitHub UI/CLI
