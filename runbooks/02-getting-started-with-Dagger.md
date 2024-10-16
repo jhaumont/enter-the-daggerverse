@@ -194,6 +194,11 @@ Relancez la compilation pour intéragir avec l'image :
 dagger call build --source=. terminal --cmd=sh
 ```
 
+> [!NOTE]
+> Mais d'où vient la comment `terminal` introuvable lorsqu'on lance la commande `dagger --help` ?
+>
+> Et bien on le trouve au détour de la documentation dans le [User Manual](https://docs.dagger.io/manuals/user/terminal)
+
 Vérifiez que le binaire de l'application est bien présent :
 ```bash
 ls -al /bin/hello
@@ -214,6 +219,11 @@ Cliquez sur le bouton proposé par VSCode et ajouter `/devfest` à la fin de l'u
 
 > [!NOTE]
 > Si vous n'utilisez pas le codespace, ouvrez votre navigateur et entrez l'URL suivante `localhost:8080/devfest`.
+
+> [!NOTE]
+> Mais d'où vient la comment `as-service` introuvable lorsqu'on lance la commande `dagger --help` ?
+>
+> Et bien on le trouve au détour de la documentation dans le [User Manual](https://docs.dagger.io/manuals/user/services)
 
 ## Publier l'application
 
