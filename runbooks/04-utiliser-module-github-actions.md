@@ -15,10 +15,12 @@ Créer une nouvelle branche Git (remplacer `<nom_branche>`):
 git checkout -b <nom_branche>
 ```
 
-Ouvrir le fichier `.github/workflows/CI.yaml` dans VSCode (à trouver dans le panel Explorer sur la gauche)
+Ouvrir le fichier `.github/workflows/CI.yaml` dans VSCode (à trouver dans le panel Explorer sur la gauche).
 
-Modifier la GitHub action `CI hello` - en utilisant l'intégration Dagger pour GitHub Actions - afin d'appeler la fonction Publish pour builder et publier l'application.
+Modifier la GitHub action `CI hello` - en utilisant l'intégration Dagger pour GitHub Actions - afin d'appeler la fonction `Publish` pour builder et publier l'application.
 
 Pour tester la GitHub Actions, pousser votre branche et créer une PR.
 
-Vous avez maintenant un pipeline de CI pour l'application hello. Il s'exécute sur GitHub Actions en utilisant les fonctions Dagger que vous avez créées.
+Vous avez maintenant un pipeline de CI pour l'application `hello`.
+
+Le pipeline s'exécute sur GitHub Actions en utilisant les fonctions Dagger que vous avez créées.
