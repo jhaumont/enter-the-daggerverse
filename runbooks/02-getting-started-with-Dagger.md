@@ -1,6 +1,6 @@
 # Getting started with Dagger
 
-L'objectif est de construire les composants d'un pipeline de CI pour une application web nommée **hello** (permettant de faire un `hello "<ce que l'on veut>"`) sous la forme d'un module Dagger.
+L'objectif est de construire les composants d'un pipeline de CI pour une application web nommée `hello` (permettant de faire un `hello "<ce que l'on veut>"`) sous la forme d'un module Dagger.
 
 ## Initialisation du module Dagger
 
@@ -10,7 +10,7 @@ L'objectif est de construire les composants d'un pipeline de CI pour une applica
 > git clone https://github.com/jhaumont/Enter-the-Daggerverse.git
 > ```
 
-Ensuite, ouvrez le répertoire de l'application **hello** :
+Ensuite, ouvrez le répertoire de l'application `hello` :
 ```bash
 cd hello
 ```
