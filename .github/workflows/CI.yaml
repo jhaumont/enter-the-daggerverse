@@ -5,7 +5,7 @@ on:
       - 'main'
   push:
     branches:
-      - 'main'
+      - 'jhaumont-patch-1'
 
 jobs:
   CI:

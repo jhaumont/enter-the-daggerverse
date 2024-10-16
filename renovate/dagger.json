@@ -1,0 +1,6 @@
+{
+  "name": "renovate",
+  "sdk": "go",
+  "source": ".",
+  "engineVersion": "v0.13.5"
+}
