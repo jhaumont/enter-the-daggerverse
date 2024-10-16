@@ -29,3 +29,4 @@ jobs:
           cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
         env:
           RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
