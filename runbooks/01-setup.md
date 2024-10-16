@@ -28,6 +28,6 @@ Voici les éléments à mettre en place pour réaliser le codelab sur votre mach
 > [!TIP]
 > En cas de soucis avec les identifiants docker sur WSL2, essayer la solution suivante https://forums.docker.com/t/docker-credential-desktop-exe-executable-file-not-found-in-path-using-wsl2/100225/5
 
-### Getting Started with Dagger
+## Getting Started with Dagger
 
 Une fois prêts, démarrer le allez à la page [Getting started with Dagger](02-getting-started-with-Dagger.md)
