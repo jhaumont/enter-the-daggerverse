@@ -1,6 +1,6 @@
 # Getting started with Dagger
 
-L'objectif est de construire les composants d'un pipeline de CI pour une application web nommée **hello** - (permettant de faire un `hello "<ce que l'on veut>"`) sous la forme d'un module Dagger.
+L'objectif est de construire les composants d'un pipeline de CI pour une application web nommée **hello** (permettant de faire un `hello "<ce que l'on veut>"`) sous la forme d'un module Dagger.
 
 ## Initialisation du module Dagger
 
@@ -119,7 +119,7 @@ A la fin de l'exécution de la commande, vous allez voir ce message :
 
 En effet, par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. C'est un peu génant si on ne le souhaite pas. 
 
-Il est possiible de désactiver ce comportement en valorisant la variable d'environnement `STOPIT` (un nom assez curieux) et de relancer la commande :
+Il est possible de désactiver ce comportement en valorisant la variable d'environnement `STOPIT` (un nom assez curieux) et de relancer la commande :
 ```bash
 export STOPIT=1
 dagger call build-env --source=.
@@ -217,7 +217,7 @@ Cliquez sur le bouton proposé par VSCode et ajouter `/devfest` à la fin de l'u
 
 ## Publier l'application
 
-Dernière étape est de publier l'application sur le Daggerverse :
+La dernière étape est de publier l'application sur le Daggerverse :
 ```bash
 dagger call publish --source=.
 ```

@@ -1,0 +1,25 @@
+{
+    $schema: "https://docs.renovatebot.com/renovate-schema.json",
+    extends: [
+      "customManagers:dockerfileVersions",
+    ],
+    onboarding: false,
+    timezone: "Europe/Paris",
+    labels: ["dependencies"],
+    prCreation: "not-pending", // do not create PR yet for branches on hold (ex: minimumReleaseAge, building, ...)
+    schedule: ["every weekday"],
+    prConcurrentLimit: 10,
+    semanticCommits: "enabled",
+    rebaseWhen: "auto", // this is the default value, https://docs.renovatebot.com/configuration-options/#rebasewhen
+    prHourlyLimit: 0, // We don't want to limit number of PR/branches created in one renovate scan. Doc https://docs.renovatebot.com/configuration-options/#prhourlylimit
+    postUpdateOptions: ["gomodTidy"], // disabled by default, tidying go deps is a best practice
+}
+      //  # hosted configurations
+      //     autodiscover: false # do not scan github orga
+      //     printConfig: true # print configuration to logs. Required by renovate-manager
+      //     requireConfig: "optional" # allow to scan without specific config
+      //     persistRepoData: true
+      //     presetCachePersistence: true
+      //     dryRun: null
+      //     onboarding: false
+      //     allowedPostUpgradeCommands:

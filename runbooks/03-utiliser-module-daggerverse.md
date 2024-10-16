@@ -97,7 +97,7 @@ func (m *Hello) Build(source *dagger.Directory) *dagger.Container {
 
 Dorénavant, cette fonction fait appel à `BuildEnv` pour sélectionner son contexte de build.
 
-Puis la fonction `Build` du module Go importé précédemment (le module qui a été cherché dans le Daggerverse) pour réaliser la construction de l'application. 
+Puis la fonction `Build` du module Go importé précédemment (le module qui a été choisi dans le Daggerverse) pour réaliser la construction de l'application. 
 
 L'option `Static: true` est l'équivalant de `WithEnvVariable("CGO_ENABLED", "0")` dans la version précédent de la fonction `BuildEnv`.
 
