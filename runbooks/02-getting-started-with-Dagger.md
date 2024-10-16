@@ -1,36 +1,35 @@
 # Getting started with Dagger
 
-L'objectif est de construire les composants d'un pipeline de CI pour une application web - ***hello*** - (permettant de faire un `hello <ce que l'on veut>`) sous la forme d'un module Dagger.
+L'objectif est de construire les composants d'un pipeline de CI pour une application web nommée **hello** - (permettant de faire un `hello "<ce que l'on veut>"`) sous la forme d'un module Dagger.
 
 ## Initialisation du module Dagger
 
 > [!NOTE]
-> Si pas d'utilisation du codespace mis à disposition, faire un clone du repository du codelab sur votre machine:
+> Si vous utilisez une installation locale à votre machine de Dagger, clonez le repository du codelab sur votre machine :
 > ```bash
 > git clone https://github.com/jhaumont/Enter-the-Daggerverse.git
 > ```
 
-Ouvrir le répertoire de l'application hello:
+Ensuite, ouvrez le répertoire de l'application **hello** :
 ```bash
 cd hello
 ```
 
 > [!IMPORTANT]
-> Toutes les commandes suivantes seront jouées dans le répertoire `hello` depuis votre terminal.
+> Toutes les commandes suivantes seront exécutées dans le répertoire `hello` depuis votre terminal.
 
-Initialiser votre module de Dagger:
+Initialisez votre module de Dagger :
 ```bash
 dagger init --sdk=go --source=./dagger
 ```
 
-Cette commande va télécharger l'image docker du Dagger engine, le démarrer et générer votre structre de module Dagger:
-- Un fichier `dagger.json` de metadata
-- Un répertoire `dagger`: 
-  - Un fichier `main.go` qui va contenir le code de votre module.
-  - Un ficher `dagger.gen.go` contenant du code utilitaire généré par Dagger
-  - Une repertoire `internal` contenant du code utilitaire généré par Dagger
+Cette commande va télécharger l'image docker du Dagger engine, le démarrer et générer votre structre de module Dagger :
+- Un fichier `dagger.json` de metadata,
+- Un répertoire `dagger` : 
+  - Un fichier `main.go` qui va contenir le code de votre module,
+  - Un ficher `dagger.gen.go` et un répertoire `internal` contenant le code utilitaire généré par Dagger,
 
-Remplacer, dans le fichier `dagger/main.go`, le code existant par celui-ci :
+Dans le fichier `dagger/main.go`, remplacez le code existant par celui ci-dessous :
 
 ```go
 package main
@@ -74,162 +73,167 @@ return dag.Container().
 ```
 
 > [!NOTE]
-> Votre module se compose dorénavant de 3 fonctions :
-> - `BuildEnv` pour construire un environnement (une image docker) pour être utilisée par les autres fonctions
-> - `Build` pour builder votre application web
-> - `Publish` pour publier sur la registry `ttl.sh` votre application
+> Le module se compose dorénavant de 3 fonctions :
+> - `BuildEnv` pour construire un environnement (une image Docker) pour être utilisé par les autres fonctions,
+> - `Build` pour compiler l'application web,
+> - `Publish` pour publier votre application sur la registry `ttl.sh`.
 
+> [!NOTE]
+> `ttl.sh` est une registry publique pour Docker afin d'y stocker des images non-critiques de façon temporaire.
 
 > [!WARNING]
-> Le fichier `dagger.gen.go` a un problème de compilation.
+> Le fichier `dagger.gen.go` souffre d'un problème de compilation.
 > 
 > En changeant le contenu du fichier, l'interface a évolué.
 > 
-> Regénérer le code Dagger du module:
->
+> Il faut regénérer le code Dagger du module, avec la commande ci-dessous :
 > ```bash
 > dagger develop
 > ```
 
 ## Construire l'environnement pour le pipeline de CI de l'application
 
-Maintenant que nous avons un module, nous allons lancer une de ces fonctions:
+> [!NOTE]
+> Pour les méthodes publiques, le langage **Go** utilise la convention `PascalCase`. C'est à dire, Que chaque mot commence par une majuscule, le tout concaténé. Dans notre exemple, nous avant la méthode publique `BuildEnv`.
+>
+> Toutefois, pour appeler la méthode publique `BuildEnv` depuis la ligne de commande Dagger, le nom va utiliser la convention `kebab-case`. Ainsi, la méthode publique `BuildEnv` devra être appelée avec le nom `build-env`.
+>
+> Exemple ci-après.
+
+Maintenant que nous avons un module, nous allons lancer une de ses fonctions :
 ```bash
 dagger call build-env --source=.
 ```
 
-> [!NOTE]
-> La fonction GO BuildEnv est devenu `build-env` en argument de la commande `dagger`. Dagger utilise le style `kebab-case` pour convertir les fonctions (et arguments, champs, etc) créés afin d'avoir une interface standardisée, peut importe le langage utilisé.
-
-Vous allez avoir des traces ***interactives*** dans votre shell.
-Essayer de les manipuler. Par exemple, augmenter la verbosité, cela peut aider dans l'analyse et la conpréhension.
+Vous allez voir apparaître sur le terminal des traces **interactives**.
+Essayez de les manipuler.
+Exemple, pour augmenter la verbosité des traces pendant l'exécution, vous pouvez appuyer sur la touche `+`.
 
 > [!NOTE]
-> Toutes les traces & spans que vous voyez, c'est de l'OpenTelemetry, comme pour une requête HTTP.
-> C'est verbeux et perturbant au debut, et très lié à Docker. 
-> Mais petit à petit, on s'y fait bien.
+> Toutes les traces & spans que vous voyez s'afficher sont de l'OpenTelemetry, comme pour une requête HTTP.
+> Cela peut être perturbant au debut et très lié à Docker. 
+> Avec le temps, on s'y fait bien.
 
-A la fin de l'exécution de la commande, vous allez voir ce message:
+A la fin de l'exécution de la commande, vous allez voir ce message :
 ![](dagger-cloud-traces.png)
 
-Par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. C'est un peu génant si on ne le souhaite pas. 
+En effet, par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. C'est un peu génant si on ne le souhaite pas. 
 
-Déésactiver les comme conseillé et relancer la commande:
+Il est possiible de désactiver ce comportement en valorisant la variable d'environnement `STOPIT` (un nom assez curieux) et de relancer la commande :
 ```bash
 export STOPIT=1
 dagger call build-env --source=.
 ```
+
 Le message a disparu.
 
 > [!WARNING]
-Attention, il y a plusieurs possibilités de variables pour désactiver les traces: `GOAWAY, SHUTUP, STOPIT, NOTHANKS, etc`
+> Attention, il y a plusieurs possibilités de variables pour désactiver les traces : `GOAWAY`, `SHUTUP`, `STOPIT`, `NOTHANKS`, etc.
 
-Vous avez maintenant un environnement d'exécution GO contenant les sources de votre projet à votre disposition.
+Vous avez maintenant un environnement d'exécution **Go** contenant les sources de votre projet à votre disposition.
 
 ## Dagger cloud
 
-Afin d'exploiter plus facilement les traces, nous allons utiliser le dagger cloud.
+Afin d'exploiter plus facilement les traces, nous allons utiliser le **Dagger cloud**.
 
-Réactiver l'envoi de traces:
-
+Pour réactiver l'envoi de traces, le plus simple est de supprimer la variable d'environnement :
 ```bash
 unset STOPIT=1
 ```
 
-Créer un compte cloud:
-https://docs.dagger.io/manuals/user/cloud-get-started
+Afin de pouvoir visualiser les traces, vous devez créer un compte sur le [Dagger cloud](https://docs.dagger.io/manuals/user/cloud-get-started).
 
 > [!TIP]
-> Utiliser votre compte GitHub
+> Afin de faciliter la suite du TP, si vous décidez de créer un compte **Dagger cloud**, le plus simple est d'utiliser votre compte GitHub (le bouton `Sign in with GitHub`).
 
-Créer l'organisation `devfest`.
-
+Ensuite, créez l'organisation `devfest`.
 Un token vous est proposé. Exporter le:
 
 ```bash
 export DAGGER_CLOUD_TOKEN=<token>
 ```
 
-Pour ne plus avoir à le faire à chaque ouverture de session/terminal, il faut ajouter ce token à votre contexte (`.profile` ou autre)
+Pour ne plus avoir à le faire à chaque ouverture de session/terminal, il faut ajouter ce token à votre contexte (`.profile` ou autre).
 
 ## Intéragir avec le résultat de votre fonction
 
 Lorsque votre fonction retourne une image docker, vous avez la possibilité d'interagir avec cette dernière pour inspecter son contenu.
 
-Lancer à nouveau la commande de `build-env` avec la commande `terminal`:
-
+Lancer à nouveau la fonction `build-env` avec la commande `terminal` :
 ```bash
 dagger call build-env --source=. terminal --cmd=sh
 ```
 
 > [!WARNING]
-> Bien choisir une image qui possède un shell (sh, bash, etc))
+> Bien choisir une image qui possède un shell (sh, bash, etc)
 
-Vérifier que le répertoire du projet a bien été monté dans l'image:
+Vérifier que le répertoire du projet a bien été monté dans l'image :
 ```bash
 ls -al
 ```
 
-Taper `exit` pour quitter.
+Tapez `exit` pour quitter le terminal lancé dans le container.
 
-A la fin de l'exécution, un lien vers le Dagger cloud vous est proposé. Cliquer dessus pour explorer les traces de votre commande.
+A la fin de l'exécution, un lien vers le **Dagger cloud** vous est affiché.
+Cliquez dessus pour explorer les traces de votre commande.
 
-## Builder l'application
+## Compiler l'application
 
-Maintenant que nous avons un environnement GO, nous allons pouvoir builder notre application.
+Maintenant que nous avons un environnement **Go**, nous allons pouvoir compiler l'application.
 
 Lancer la commande:
 ```bash
 dagger call build --source=.
 ```
 
-Votre application a été buildée ! L'output de la fonction est une image docker prête à l'emploi !
+L'application a été compilée et l'image docker construite !
+La sortie/résultat de la fonction est une image docker prête à l'emploi !
 
-Relancer le build pour intéragir avec l'image
+Relancez la compilation pour intéragir avec l'image :
 ```bash
 dagger call build --source=. terminal --cmd=sh
 ```
 
-Vérifier que le binaire de notre application est bien présent:
+Vérifiez que le binaire de l'application est bien présent :
 ```bash
 ls -al /bin/hello
 ```
 
-Taper `exit` pour quitter.
+Tapez `exit` pour quitter le terminal lancé dans le container.
 
 ## Tester l'application
 
-Maintenant que nous avons builder notre application, si nous la testions sur notre poste ?
+Maintenant que nous avons construit l'image docker de l'application, testons la sur notre poste !
 
-Démarrer l'application avec la command `as-service` de Dagger :
+Démarrez l'application avec la command `as-service` de Dagger :
 ```bash
 dagger call build --source=. as-service up --ports=8080:666
 ```
 
-Cliquer sur le bouton proposé par VSCode et ajouter `/devfest` à la fin de l'url de la page.
+Cliquez sur le bouton proposé par VSCode et ajouter `/devfest` à la fin de l'url de la page.
 
 > [!NOTE]
-> Si pas d'utilisation du codespace, ouvrir votre navigateur et entrez l'URL suivante `localhost:8080/devfest`.
+> Si vous n'utilisez pas le codespace, ouvrez votre navigateur et entrez l'URL suivante `localhost:8080/devfest`.
 
 ## Publier l'application
 
-Dernière étape, publier votre application (et briller en société) :
-
+Dernière étape est de publier l'application sur le Daggerverse :
 ```bash
 dagger call publish --source=.
 ```
 
-Tester le conteneur publié (ID est l'identifiant unique du conteneur):
-
+Testez le conteneur publié (ID est l'identifiant unique du conteneur) :
 ```bash
 docker run --rm --detach --publish 8080:666 ttl.sh/hello-<ID>
 ```
 
-Aller dans l'onglet PORTS (à côté de celui de TERMINAL) et ajouter le port 8080 puis cliquer sur le lien associé et ajouter `/devfest` à la fin de l'url de la page.
+Dans l'onglet `PORTS` (à côté de celui de `TERMINAL`), ajoutez le port `8080`.
+
+Cliquez sur le lien associé et ajoutez `/devfest` à la fin de l'url de la page.
 
 > [!NOTE]
-> Si pas d'utilisation du codespace, ouvrir votre navigateur et entrez l'URL suivante `localhost:8080/devfest`.
+> Si vous n'utilisez pas le codespace, ouvrez votre navigateur et entrez l'URL suivante `localhost:8080/devfest`.
 
 Vous avez maintenant un ensemble de fonctions utilisables pour cronstruire un pipeline de CI pour votre application, avec n'importe quel outil de CI/CD.
 
-Pour la suite, vous allez utiliser un module externe dans vos fonctions - [cliquer ici](03-utiliser-module-daggerverse.md).
+Pour la suite, vous allez utiliser un module externe dans les fonctions. Rendez-vous au chapitre [Utiliser un module du Daggerverse](03-utiliser-module-daggerverse.md).
