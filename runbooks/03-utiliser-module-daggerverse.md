@@ -31,7 +31,7 @@ dagger install github.com/vito/daggerverse/go@v0.0.1
 ```
 
 > [!NOTE]
-> Il est aussi possible d'utiliser des modules non disponibles dans le Daggerverse. Plus d'informations dans cette [doc](https://docs.dagger.io/api/remote-modules).
+> Il est aussi possible d'utiliser des modules non disponibles dans le Daggerverse. Plus d'informations dans cette la documentation officielke [Using Modules from Remote Repositories](https://docs.dagger.io/api/remote-modules).
 
 Pour découvrir le module, afficher son aide :
 ```bash

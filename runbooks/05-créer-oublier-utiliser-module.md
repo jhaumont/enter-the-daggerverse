@@ -75,14 +75,15 @@ Quelques liens intéressants pour vous aider :
 > ```
 
 > [!TIP]
-> N'oubliez pas la commande `dagger develop` une fois que vous avez terminé votre fonction.
+> N'oubliez pas la commande `dagger develop` une fois que vous avez terminé votre fonction afin de regénérer le code d'interface Dagger.
 
 ## Publier le module renovate
 
 > [!NOTE]
-> Cette partie sera réalisée par les animateurs en live
+> Cette partie sera réalisée par les animateurs en direct
 
-Suivez la documentation officielle: https://docs.dagger.io/manuals/developer/publish-modules & https://daggerverse.dev/publish.
+Suivez la documentation officielle : [Publishing Modules](https://docs.dagger.io/manuals/developer/publish-modules) et [
+Publish a Module](https://daggerverse.dev/publish).
 
 ## Utiliser votre module dans le pipeline
 

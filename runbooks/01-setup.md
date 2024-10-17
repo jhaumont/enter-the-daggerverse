@@ -15,7 +15,7 @@ Cliquez sur le bouton ci-dessous et laissez vous porter par la magie :
 
 [![Click to open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jhaumont/enter-the-daggerverse)
 
-Dans la fenêtre de création du codespace, pensez à changer le repository pour cibler votre fork et changer le machine type en 4-core:
+Dans la fenêtre de création du codespace, pensez à changer le repository pour cibler votre fork et changer le machine type en 4-core :
 
 ![](codespace.png)
 
