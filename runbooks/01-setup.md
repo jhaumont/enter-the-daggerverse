@@ -5,11 +5,19 @@ Pour réaliser ce codelab, vous avez 2 possibilités :
 - Utiliser le GitHub Codespace mis à disposition (**méthode recommandée**)
 - Installer les prérequis et Dagger sur votre machine (voir section *Installation locale* de ce document)
 
+## Fork du repository
+
+Faire un fork de ce repository.
+
 ## Codespace
 
 Cliquez sur le bouton ci-dessous et laissez vous porter par la magie :
 
 [![Click to open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jhaumont/enter-the-daggerverse)
+
+Dans la fenêtre de création du codespace, pensez à changer le repository pour cibler votre fork et changer le machine type en 4-core:
+
+![](codespace.png)
 
 ## Installation locale
 

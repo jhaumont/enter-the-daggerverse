@@ -5,9 +5,9 @@ L'objectif est de construire les composants d'un pipeline de CI pour une applica
 ## Initialisation du module Dagger
 
 > [!NOTE]
-> Si vous utilisez une installation locale à votre machine de Dagger, clonez le repository du codelab sur votre machine :
+> Si vous utilisez une installation locale à votre machine de Dagger, clonez le fork du repository du codelab sur votre machine :
 > ```bash
-> git clone https://github.com/jhaumont/Enter-the-Daggerverse.git
+> git clone https://github.com/<votre-pseudo-github>/Enter-the-Daggerverse.git
 > ```
 
 Ensuite, ouvrez le répertoire de l'application `hello` :

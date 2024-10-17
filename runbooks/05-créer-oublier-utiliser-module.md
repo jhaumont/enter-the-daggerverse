@@ -1,6 +1,6 @@
 # Créer, publier un module dans le daggerverse et l'utiliser
 
-Pour aller plus loin dan la découverte des fonctionnalités de Dagger, nous vous proposons la construction d'un module réutilisable répondant à un besoin simple : la gestion de vos dépendances.
+Pour aller plus loin dans la découverte des fonctionnalités de Dagger, nous vous proposons la construction d'un module réutilisable répondant à un besoin simple : la gestion de vos dépendances.
 
 Pour se faire, nous allons créer un module Renovate, le publier dans le Daggerverse (parce que c'est cool de partager) et l'utiliser dans le pipeline de notre application.
 
@@ -49,7 +49,7 @@ Les éléments à votre dispositon pour construire cette fonction :
     ```bash
     docker run -e RENOVATE_TOKEN \
     -e "LOG_LEVEL"=info \
-    -e "RENOVATE_REPOSITORIES=[\"jhaumont/enter-the-daggerverse\"]" \
+    -e "RENOVATE_REPOSITORIES=[\"<votre-pseudo-github>/enter-the-daggerverse\"]" \
     -e "RENOVATE_BASE_BRANCHES=[\"main\"]" \
     renovate/renovate:38 --platform=github --onboarding=false
     ```
