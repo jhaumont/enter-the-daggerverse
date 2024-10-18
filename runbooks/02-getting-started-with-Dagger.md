@@ -23,7 +23,7 @@ Initialisez votre module de Dagger :
 dagger init --sdk=go --source=./dagger
 ```
 
-Cette commande va télécharger l'image docker du Dagger engine, le démarrer et générer votre structre de module Dagger :
+Cette commande va télécharger l'image docker du Dagger engine, le démarrer et générer votre structure de module Dagger :
 - Un fichier `dagger.json` de metadata,
 - Un répertoire `dagger` : 
   - Un fichier `main.go` qui va contenir le code de votre module,
