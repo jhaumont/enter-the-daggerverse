@@ -14,3 +14,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Publish
+        uses: dagger/dagger-for-github@v6
+        with:
+          version: "0.13.5"
+          verb: call
+          workdir: hello
+          args: publish --source=.
+          cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
+          
