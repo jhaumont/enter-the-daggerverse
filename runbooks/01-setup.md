@@ -1,41 +1,41 @@
 # Setup
 
-Pour réaliser ce codelab, vous avez 2 possibilités :
+To run this codelab, you have 2 choices:
 
-- Utiliser le GitHub Codespace mis à disposition (**méthode recommandée**)
-- Installer les prérequis et Dagger sur votre machine (voir section *Installation locale* de ce document)
+- Use GitHub Codespace by clicking on the button bellow (**recommended**)
+- Install all prerequisites and Dagger on your computer (see section *Local Installation* of this document)
 
-## Fork du repository
+## Fork this repository
 
-Faire un fork de ce repository.
+Please, fork this repository. With your fork, you can commit & push to save your work.
 
 ## Codespace
 
-Cliquez sur le bouton ci-dessous et laissez vous porter par la magie :
+Click on the button bellow:
 
 [![Click to open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jhaumont/enter-the-daggerverse)
 
-Dans la fenêtre de création du codespace, pensez à changer le repository pour cibler votre fork et changer le machine type en 4-core :
+In the codespace's creation's page, keep in mind to **change repository to use your fork**. To be more comfortable, select 4-core machine type:
 
 ![](codespace.png)
 
-## Installation locale
+## Local installation
 
-Voici les éléments à mettre en place pour réaliser le codelab sur votre machine :
+To run this codelab, your need install all of components bellow:
 
-- Avec Windows l'utilisation de WSL2 est recommandée (vous pouvez toutefois utiliser un système de virtualisation comme [Virtualbox](https://www.virtualbox.org))
-- Avoir Docker installé sur votre machine (via **Docker for Windows/Mac** ou **Rancher Desktop** pour Windows et Mac OS)
-- Installer un client [Git](https://git-scm.com/)
-- Installer la version `1.23.x` du langage [Go](https://go.dev/doc/install)
-- Installer le client [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.13.5`
-  - Exemple pour linux:
+- Under Windows, WSL2 is highly recommended (but you can use an other virtualization manager like [Virtualbox](https://www.virtualbox.org))
+- Install **Docker for Windows/Mac** or **Rancher Desktop**
+- Install [Git](https://git-scm.com/)
+- Install [Go](https://go.dev/doc/install) langage `1.23.x`
+- Install [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.13.5`
+  - Example for linux:
     ```bash
     curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.13.5 $HOME/.local/bin sh
     ```
 
 > [!TIP]
-> En cas de soucis avec les identifiants docker sur WSL2, essayer la solution suivante https://forums.docker.com/t/docker-credential-desktop-exe-executable-file-not-found-in-path-using-wsl2/100225/5
+> If you have any issue with Docker credential by using WSL2, you can try this fix it by following instruction given on this website https://forums.docker.com/t/docker-credential-desktop-exe-executable-file-not-found-in-path-using-wsl2/100225/5
 
 ## Getting Started with Dagger
 
-Une fois prêts, démarrer le allez à la page [Getting started with Dagger](02-getting-started-with-Dagger.md)
+Now, you are ready to go to next page [Getting started with Dagger](02-getting-started-with-Dagger.md)
