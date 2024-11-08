@@ -26,7 +26,7 @@ To run this codelab, your need install all of components bellow:
 - Under Windows, WSL2 is highly recommended (but you can use an other virtualization manager like [Virtualbox](https://www.virtualbox.org))
 - Install **Docker for Windows/Mac** or **Rancher Desktop**
 - Install [Git](https://git-scm.com/)
-- Install [Go](https://go.dev/doc/install) langage `1.23.x`
+- Install [Go](https://go.dev/doc/install) language `1.23.x`
 - Install [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.13.5`
   - Example for linux:
     ```bash
