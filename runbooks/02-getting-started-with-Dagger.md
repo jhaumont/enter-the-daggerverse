@@ -84,7 +84,7 @@ return dag.Container().
 > [!WARNING]
 > Le fichier `dagger.gen.go` souffre d'un problème de compilation.
 > 
-> En changeant le contenu du fichier, l'interface a évolué.
+> En changeant le contenu du fichier `dagger/main.go`, l'interface a évolué.
 > 
 > Il faut regénérer le code Dagger du module, avec la commande ci-dessous :
 > ```bash
@@ -94,7 +94,7 @@ return dag.Container().
 ## Construire l'environnement pour le pipeline de CI de l'application
 
 > [!NOTE]
-> Pour les méthodes publiques, le langage **Go** utilise la convention `PascalCase`. C'est à dire, Que chaque mot commence par une majuscule, le tout concaténé. Dans notre exemple, nous avant la méthode publique `BuildEnv`.
+> Pour les méthodes publiques, le langage **Go** utilise la convention `PascalCase`. C'est à dire, que chaque mot commence par une majuscule, le tout concaténé. Dans notre exemple, nous avant la méthode publique `BuildEnv`.
 >
 > Toutefois, pour appeler la méthode publique `BuildEnv` depuis la ligne de commande Dagger, le nom va utiliser la convention `kebab-case`. Ainsi, la méthode publique `BuildEnv` devra être appelée avec le nom `build-env`.
 >
