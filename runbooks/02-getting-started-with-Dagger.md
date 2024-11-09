@@ -117,9 +117,9 @@ Exemple, pour augmenter la verbosité des traces pendant l'exécution, vous pouv
 A la fin de l'exécution de la commande, vous allez voir ce message :
 ![](dagger-cloud-traces.png)
 
-En effet, par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. C'est un peu génant si on ne le souhaite pas. 
+Par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. Vous pouvez désactiver ce comportement,  
+en valorisant une des variables d'environnement suivantes `NOTHANKS`, `SHUTUP`, `GOAWAY` or `STOPIT` :
 
-Il est possible de désactiver ce comportement en valorisant la variable d'environnement `STOPIT` (un nom assez curieux) et de relancer la commande :
 ```bash
 export STOPIT=1
 dagger call build-env --source=.
@@ -127,8 +127,12 @@ dagger call build-env --source=.
 
 Le message a disparu.
 
-> [!WARNING]
-> Attention, il y a plusieurs possibilités de variables pour désactiver les traces : `GOAWAY`, `SHUTUP`, `STOPIT`, `NOTHANKS`, etc.
+Vous trouvez qu'avoir 4 variables d'environnement pour faire la même chose c'est un peu étrange ?
+Il s'agit d'une petite blague de Solomon Hykes dans le fichier [dagql/idtui/frontend.go](https://github.com/dagger/dagger/commit/6238db7a484daa6e4ad14032a9dce23cbc280643#diff-f5226e94ea6152ddc0519aecff9194c2f24160f2b52e35be6affabd761b73a27R28):
+```
+// having a bit of fun with these. cc @vito @jedevc
+var skipLoggedOutTraceMsgEnvs = []string{"NOTHANKS", "SHUTUP", "GOAWAY", "STOPIT"}
+```
 
 Vous avez maintenant un environnement d'exécution **Go** contenant les sources de votre projet à votre disposition.
 
@@ -167,7 +171,7 @@ dagger call build-env --source=. terminal --cmd=sh
 > [!WARNING]
 > Bien choisir une image qui possède un shell (sh, bash, etc)
 
-Vérifier que le répertoire du projet a bien été monté dans l'image :
+Vérifier que le répertoire du projet a bien été monté dans le conteneur :
 ```bash
 ls -al
 ```
@@ -181,7 +185,7 @@ Cliquez dessus pour explorer les traces de votre commande.
 
 Maintenant que nous avons un environnement **Go**, nous allons pouvoir compiler l'application.
 
-Lancer la commande:
+Lancer la commande :
 ```bash
 dagger call build --source=.
 ```
@@ -189,13 +193,13 @@ dagger call build --source=.
 L'application a été compilée et l'image docker construite !
 La sortie/résultat de la fonction est une image docker prête à l'emploi !
 
-Relancez la compilation pour intéragir avec l'image :
+Relancez la compilation pour intéragir avec le conteneur :
 ```bash
 dagger call build --source=. terminal --cmd=sh
 ```
 
 > [!NOTE]
-> Mais d'où vient la comment `terminal` introuvable lorsqu'on lance la commande `dagger --help` ?
+> Mais d'où vient la commande `terminal` introuvable lorsqu'on lance la commande `dagger --help` ?
 >
 > Et bien on le trouve au détour de la documentation dans le [User Manual](https://docs.dagger.io/manuals/user/terminal)
 
@@ -210,7 +214,7 @@ Tapez `exit` pour quitter le terminal lancé dans le container.
 
 Maintenant que nous avons construit l'image docker de l'application, testons la sur notre poste !
 
-Démarrez l'application avec la command `as-service` de Dagger :
+Démarrez l'application avec la commande `as-service` de Dagger :
 ```bash
 dagger call build --source=. as-service up --ports=8080:666
 ```
@@ -227,12 +231,12 @@ Cliquez sur le bouton proposé par VSCode et ajouter `/devfest` à la fin de l'u
 
 ## Publier l'application
 
-La dernière étape est de publier l'application sur le Daggerverse :
+La dernière étape est de publier notre application sur `ttl.sh` :
 ```bash
 dagger call publish --source=.
 ```
 
-Testez le conteneur publié (ID est l'identifiant unique du conteneur) :
+Testez l'image publiée (ID est l'identifiant unique de l'image) :
 ```bash
 docker run --rm --detach --publish 8080:666 ttl.sh/hello-<ID>
 ```
@@ -244,6 +248,6 @@ Cliquez sur le lien associé et ajoutez `/devfest` à la fin de l'url de la page
 > [!NOTE]
 > Si vous n'utilisez pas le codespace, ouvrez votre navigateur et entrez l'URL suivante `localhost:8080/devfest`.
 
-Vous avez maintenant un ensemble de fonctions utilisables pour cronstruire un pipeline de CI pour votre application, avec n'importe quel outil de CI/CD.
+Vous avez maintenant un ensemble de fonctions utilisables pour construire un pipeline de CI pour votre application, avec n'importe quel outil de CI/CD.
 
 Pour la suite, vous allez utiliser un module externe dans les fonctions. Rendez-vous au chapitre [Utiliser un module du Daggerverse](03-utiliser-module-daggerverse.md).
