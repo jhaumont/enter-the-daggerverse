@@ -31,7 +31,7 @@ dagger install github.com/vito/daggerverse/go@v0.0.1
 ```
 
 > [!NOTE]
-> Il est aussi possible d'utiliser des modules non disponibles dans le Daggerverse. Plus d'informations dans la documentation officielke [Using Modules from Remote Repositories](https://docs.dagger.io/api/remote-modules).
+> Il est aussi possible d'utiliser des modules non disponibles dans le Daggerverse. Plus d'informations dans la documentation officielle [Using Modules from Remote Repositories](https://docs.dagger.io/api/remote-modules).
 
 Pour découvrir le module, afficher son aide :
 ```bash
@@ -54,7 +54,7 @@ Une autre solution est de regarder directement le code source : https://github.c
 
 ### Modifier la fonction BuildEnv
 
-Ajoutez un champ `builder` de type `Go` dans la structure `Hello` :
+Ajoutez un champ `builder` de type `*dagger.Go` dans la structure `Hello` :
 ```go
 type Hello struct {
 	builder *dagger.Go
@@ -78,7 +78,7 @@ Dorénavant, cette fonction ne retourne plus un container mais modifie l'instanc
 >
 > En modifiant la fonction `BuildEnv`, l'interface du module Dagger a changé (suppression de la variable source de cette fonction).
 > 
-> Il faut regénérer le code Dagger du module :
+> Il faut regénérer la partie du code générer par le SDK Dagger du module :
 > ```bash
 > dagger develop
 > ```

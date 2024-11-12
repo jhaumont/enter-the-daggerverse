@@ -9,7 +9,7 @@ Pour se faire, il existe une integration officielle de Dagger pour GitHub action
 >
 > La liste exhaustive se trouve ici: https://docs.dagger.io/integrations
 
-Créer une nouvelle branche Git (remplacer `<nom_branche>`):
+Créer une nouvelle branche Git (remplacer `<nom_branche>`) :
 
 ```bash
 git checkout -b <nom_branche>
@@ -22,7 +22,7 @@ Ouvrir le fichier `.github/workflows/CI.yaml` dans VSCode (à trouver dans le pa
 
 Modifier la GitHub action `CI hello` - en utilisant l'intégration Dagger pour GitHub Actions - afin d'appeler la fonction `Publish` pour builder et publier l'application.
 
-Pour tester la GitHub Actions, pousser votre branche et créer une PR.
+Pour tester la GitHub Actions, pousser votre branche et créer une Pull Request.
 
 Vous avez maintenant un pipeline de CI pour l'application `hello`.
 
