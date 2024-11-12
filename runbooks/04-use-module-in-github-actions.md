@@ -1,31 +1,32 @@
-# Utiliser le module dans une GitHub Actions
+# Use module in github actions
 
-Maintenant que nous avons les composants de notre pipeline de CI, nous allons les intégrer à une GitHub action pour automatiser notre pipeline.
+Now that we have all components for our CI, we will include it in Github Action to automate our pipeline.
 
-Pour se faire, il existe une integration officielle de Dagger pour GitHub actions : https://docs.dagger.io/integrations/github
+Todo this, you can use official [Dagger's GitHub Action](https://docs.dagger.io/integrations/github)
 
 > [!TIP]
-> Il existe un grand nombre d'integration Dagger dans divers outils de build & CI.
+> Many Dagger integration exists in many tools and CI. 
 >
-> La liste exhaustive se trouve ici: https://docs.dagger.io/integrations
+> You can see the lastest [list on Dagger documentation](https://docs.dagger.io/integrations)
 
-Créer une nouvelle branche Git (remplacer `<nom_branche>`):
+Create a new git branch (please replace `<nom_branche>`):
+
 
 ```bash
 git checkout -b <nom_branche>
 ```
 
 > [!NOTE]
-> Ajoutez votre pseudo GitHub dans le nom de votre branche pour éviter les doublons.
+> Add you nickname GitHub in branch name to avoid double branch.
 
-Ouvrir le fichier `.github/workflows/CI.yaml` dans VSCode (à trouver dans le panel Explorer sur la gauche).
+Open `.github/workflows/CI.yaml` file in VSCode (you can find it un left panel).
 
-Modifier la GitHub action `CI hello` - en utilisant l'intégration Dagger pour GitHub Actions - afin d'appeler la fonction `Publish` pour builder et publier l'application.
+Update `CI hello` GitHub Action - with using official Dagger's GitHub Actions - to call our `Publish` function to publish our application.
 
-Pour tester la GitHub Actions, pousser votre branche et créer une PR.
+To test the GitHub Action, push your branch and create a Pull Request.
 
-Vous avez maintenant un pipeline de CI pour l'application `hello`.
+You have now a CI pipeline for `hello` application.
 
-Le pipeline s'exécute sur GitHub Actions en utilisant les fonctions Dagger que vous avez créées.
+The pipeline is execution on GitHub Action with using our Dagger's functions!
 
-Pour aller plus loin, vous pouvez [créer, publier un module dans le daggerverse et l'utiliser](05-créer-oublier-utiliser-module.md) dans un pipeline.
+To the next, please go to the next page [Create, publish a module in Daggerverse and use it](05-create-publish-module.md).
