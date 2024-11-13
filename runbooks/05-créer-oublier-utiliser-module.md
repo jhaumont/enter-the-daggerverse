@@ -61,7 +61,7 @@ Les éléments à votre dispositon pour construire cette fonction :
 - Le résultat attendu de la fonction : les logs du scan
 
 > [!NOTE]
-Quelques liens intéressants pour vous aider :
+> Quelques liens intéressants pour vous aider :
 > - https://docs.dagger.io/manuals/developer/secrets/
 > - https://pkg.go.dev/dagger.io/dagger#Container.WithExec
 > - https://docs.dagger.io/manuals/developer/functions/#optional-arguments
@@ -82,8 +82,7 @@ Quelques liens intéressants pour vous aider :
 > [!NOTE]
 > Cette partie sera réalisée par les animateurs en direct
 
-Suivez la documentation officielle : [Publishing Modules](https://docs.dagger.io/manuals/developer/publish-modules) et [
-Publish a Module](https://daggerverse.dev/publish).
+Suivez la documentation officielle : [Publishing Modules](https://docs.dagger.io/manuals/developer/publish-modules) et [Publish a Module](https://daggerverse.dev/publish).
 
 ## Utiliser votre module dans le pipeline
 
@@ -99,8 +98,7 @@ Créez le fichier de la GitHub Actions :
 touch ../.github/workflows/renovate.yaml
 ```
 
-
-Voici le squelette dans à intégrer dans le fichier :
+Voici le squelette à intégrer dans le fichier :
 
 ```yaml
 name: Renovate Scan
