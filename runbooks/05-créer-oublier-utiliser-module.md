@@ -9,7 +9,7 @@ Pour se faire, nous allons créer un module Renovate, le publier dans le Daggerv
 > [!NOTE]
 > Continuez à travailler dans la branche de la partie précédente.
 
-A la racine du repository du codelab, créez un répertoire renovate :
+A la racine du repository du codelab, créez un répertoire `renovate` :
 ```bash
 mkdir -p renovate
 ```
@@ -45,7 +45,7 @@ func (m *Renovate) RenovateScan(
 
 Les éléments à votre dispositon pour construire cette fonction :
 
-- La commande docker a implémenter:
+- La commande docker à implémenter:
     ```bash
     docker run -e RENOVATE_TOKEN \
     -e "LOG_LEVEL"=info \
@@ -56,8 +56,8 @@ Les éléments à votre dispositon pour construire cette fonction :
 - L'interface de la fonction `RenovateScan` :
   - `repository` : string obligatoire
   - `baseBranche` : string facultatif avec la valeur par défaut "main"
-  - `renovateToken` : un secret obligatoire. Dans notre cas, c'est un PAT (Personal Access Token) GitHub permettant d'accéder au repository pour vos tests en local.
-  - `logLevel` : string facultatif avec la valeur par défaut "info"
+  - `renovateToken` : string facultatif. Dans notre cas, c'est un PAT (Personal Access Token) GitHub permettant d'accéder au repository
+  - `logLevel` : string facultatif avec la valeur par défaut `info`
 - Le résultat attendu de la fonction : les logs du scan
 
 > [!NOTE]
