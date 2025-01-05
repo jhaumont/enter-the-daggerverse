@@ -117,7 +117,7 @@ Exemple, pour augmenter la verbosité des traces pendant l'exécution, vous pouv
 A la fin de l'exécution de la commande, vous allez voir ce message :
 ![](../dagger-cloud-traces.png)
 
-Par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. Vous pouvez désactiver ce comportement, en valorisant une des variables d'environnement suivantes `NOTHANKS`, `SHUTUP`, `GOAWAY` or `STOPIT` :
+Par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. Vous pouvez désactiver ce comportement, en valorisant une des variables d'environnement suivantes `NOTHANKS`, `SHUTUP`, `GOAWAY` or `STOPIT`:
 
 ```bash
 export STOPIT=1
