@@ -140,7 +140,7 @@ To be more confortable for this codelab, we are going to use **Dagger cloud**.
 
 Please, enable traces by removing environment variable:
 ```bash
-unset STOPIT=1
+unset STOPIT
 ```
 
 To see traces, you must create an account (it's free) on [Dagger cloud](https://docs.dagger.io/manuals/user/cloud-get-started).

@@ -141,7 +141,7 @@ Afin d'exploiter plus facilement les traces, nous allons utiliser le **Dagger cl
 
 Pour réactiver l'envoi de traces, le plus simple est de supprimer la variable d'environnement :
 ```bash
-unset STOPIT=1
+unset STOPIT
 ```
 
 Afin de pouvoir visualiser les traces, vous devez créer un compte (gratuit) sur le [Dagger cloud](https://docs.dagger.io/manuals/user/cloud-get-started).
