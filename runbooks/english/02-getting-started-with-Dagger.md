@@ -214,7 +214,7 @@ Now that application Docker's image is built, run it and test it on our computer
 
 Start the application with `as-service` Dagger command:
 ```bash
-dagger call build --source=. as-service up --ports=8080:666
+dagger call build --source=. as-service --use-entrypoint up --ports=8080:666
 ```
 
 Click on popup button in VSCode and add `/devfest` at the end.
@@ -225,7 +225,7 @@ Click on popup button in VSCode and add `/devfest` at the end.
 > [!NOTE]
 > But, wait a minute! Where `as-service` command come from? I can't find it with `dagger --help`?
 >
-> It's a good question. You can find it when you read the [User Manual](https://docs.dagger.io/manuals/user/services)
+> It's a good question. You can find it when you read the [User Manual](https://docs.dagger.io/api/chaining/#start-containers-as-services)
 
 ## Publish application
 

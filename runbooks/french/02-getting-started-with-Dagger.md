@@ -215,7 +215,7 @@ Maintenant que nous avons construit l'image docker de l'application, testons la 
 
 Démarrez l'application avec la commande `as-service` de Dagger :
 ```bash
-dagger call build --source=. as-service up --ports=8080:666
+dagger call build --source=. as-service --use-entrypoint up --ports=8080:666
 ```
 
 Cliquez sur le bouton proposé par VSCode et ajouter `/devfest` à la fin de l'url de la page.
@@ -226,7 +226,7 @@ Cliquez sur le bouton proposé par VSCode et ajouter `/devfest` à la fin de l'u
 > [!NOTE]
 > Mais d'où vient la comment `as-service` introuvable lorsqu'on lance la commande `dagger --help` ?
 >
-> Et bien on le trouve au détour de la documentation dans le [User Manual](https://docs.dagger.io/manuals/user/services)
+> Et bien on le trouve au détour de la documentation dans le [User Manual](https://docs.dagger.io/api/chaining/#start-containers-as-services)
 
 ## Publier l'application
 
