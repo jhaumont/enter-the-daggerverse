@@ -59,7 +59,7 @@ func (m *Hello) Build(source *dagger.Directory) *dagger.Container {
 	return dag.Container().From("debian:bookworm-slim").
 		WithDirectory("/usr/bin/", build).
 		WithExposedPort(666).
-		WithEntrypoint([]string{"/usr/bin/hello"})
+		WithDefaultArgs([]string{"/usr/bin/hello"})
 }
 
 // Build a ready-to-use development environment
@@ -215,7 +215,7 @@ Maintenant que nous avons construit l'image docker de l'application, testons la 
 
 Démarrez l'application avec la commande `as-service` de Dagger :
 ```bash
-dagger call build --source=. as-service --use-entrypoint up --ports=8080:666
+dagger call build --source=. as-service up --ports=8080:666
 ```
 
 Cliquez sur le bouton proposé par VSCode et ajouter `/devfest` à la fin de l'url de la page.

@@ -25,7 +25,7 @@ func (m *Hello) Build(source *dagger.Directory) *dagger.Container {
 	return dag.Container().From("debian:bookworm-slim").
 		WithDirectory("/usr/bin/", build).
 		WithExposedPort(666).
-		WithEntrypoint([]string{"/usr/bin/hello"})
+		WithDefaultArgs([]string{"/usr/bin/hello"})
 }
 
 // Build a ready-to-use development environment
