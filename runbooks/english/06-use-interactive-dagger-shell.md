@@ -18,7 +18,7 @@ Dagger interactive shell. Type ".help" for more information. Press Ctrl+D to exi
 ─ esc nav mode · > run prompt ────────────────────────────────────────────────────
 ```
 
-You can exit Dagger shell by using `Ctrl+C` or `Ctrl+D`.
+You can exit Dagger shell by using `Ctrl+C`, `Ctrl+D` or `exit`.
 
 # Get help
 
@@ -108,3 +108,40 @@ dagger hello.dsh
 ```
 
 # Mount a folder or file in container
+
+Now, we want create a file in current dir from container:
+```
+dagger <<EOF
+container \
+| from alpine \
+| with-exec -- sh -c "echo titi > /data/test" \
+| with-directory /data/ .
+EOF
+```
+
+You got this error message:
+```
+Error: input: container.from.withExec.withDirectory.id process "sh -c echo titi > /data/test" did not complete successfully: exit code: 1
+```
+
+because, order of parameters is important. Swap lines `with-directory` and `with-exec`:
+```
+dagger <<EOF
+container \
+| from alpine \
+| with-directory /data/ . \
+| with-exec -- sh -c "echo titi > /data/test"
+EOF
+```
+
+If you got to the `/workspaces/enter-the-daggerverse/hello-sh` folder, file `test` is not here.
+You must `export` it:
+```
+dagger <<EOF
+container \
+| from alpine \
+| with-directory /data/ . \
+| with-exec -- sh -c "echo titi > /data/test" \
+| export ./test
+EOF
+```
