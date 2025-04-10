@@ -7,7 +7,7 @@ The goal is to build components' of CI pipeline for an application called `hello
 > [!NOTE]
 > If you use a local installation of Dagger, please fork coldelab's repository on your computer:
 > ```bash
-> git clone https://github.com/<your-github-username>/enter-the-daggerverse.git
+> git clone https://github.com/<your-github-account>/Enter-the-Daggerverse.git
 > ```
 
 Now, open the folder called `hello`:
