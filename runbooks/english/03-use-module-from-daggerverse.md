@@ -77,7 +77,7 @@ Now, this function no longer returns a container, but modifies `builder` instanc
 >
 > When you change `BuildEnv` function, the interface of Dagger module has changed (removal of a variable in function).
 >
-> You must regenerate Dagger's module's code with command:
+> You must regenerate the Dagger module's code with command:
 > ```bash
 > dagger develop
 > ```

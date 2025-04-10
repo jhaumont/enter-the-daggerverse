@@ -2,7 +2,7 @@
 
 The goal is to build components' of CI pipeline for an application called `hello` (allowing you to run `hello <function-name>`) with a Dagger module.
 
-## Init Dagger's module
+## Init a Dagger module
 
 > [!NOTE]
 > If you use a local installation of Dagger, please fork coldelab's repository on your computer:
@@ -18,12 +18,12 @@ cd hello
 > [!IMPORTANT]
 > All following commands are run in the `hello` folder from your terminal.
 
-Init your Dagger's module:
+Init your Dagger module:
 ```bash
 dagger init --sdk=go --source=./dagger
 ```
 
-This command will download and run the container image of Dagger engine (based on your CLI version) then start it and generate skeleton of your Dagger's module:
+This command will download and run the container image of Dagger engine (based on your CLI version) then start it and generate skeleton of your Dagger module:
 - a `dagger.json` file that contains metadata,
 - a `dagger` folder:
   - a `main.go` file that will contains your module's code,
@@ -86,7 +86,7 @@ return dag.Container().
 >
 > When we change content of `dagger/main.go` file, public interface changes and the code generation needs to happen again.
 >
-> We must regenerate Dagger's module's code with command:
+> We must regenerate the Dagger module's code with command:
 > ```bash
 > dagger develop
 > ```
