@@ -122,3 +122,5 @@ jobs:
 ```
 
 Build the execution step of Renovate scan based on your `RenovateScan` function.
+
+Now, we will expore the Dagger shell, to do same but without any code: [Introducing Dagger Shell](./06-use-interactive-dagger-shell.md)

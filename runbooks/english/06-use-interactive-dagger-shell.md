@@ -145,3 +145,5 @@ container \
 | export ./test
 EOF
 ```
+
+Let's go to use module: [Use module from Daggerverse with Dagger Shell](./07-use-module-from-daggervers-with-dagger-shell.md)
