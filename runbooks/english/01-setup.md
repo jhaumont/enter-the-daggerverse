@@ -15,7 +15,7 @@ Click on the button bellow:
 
 [![Click to open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jhaumont/enter-the-daggerverse)
 
-In the codespace's creation's page, keep in mind to **change repository to use your fork**. To be more comfortable, select 4-core machine type:
+In the codespace's creation's page, keep in mind to **change the repository name to use your fork**. To be more comfortable, select 4-core machine type:
 
 ![](../codespace.png)
 
@@ -27,10 +27,10 @@ To run this codelab, your need install all of components bellow:
 - Install **Docker for Windows/Mac** or **Rancher Desktop**
 - Install [Git](https://git-scm.com/)
 - Install [Go](https://go.dev/doc/install) language `1.23.x`
-- Install [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.15.1`
+- Install [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.18.2`
   - Example for linux:
     ```bash
-    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.15.1 $HOME/.local/bin sh
+    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.2 $HOME/.local/bin sh
     ```
 
 > [!TIP]

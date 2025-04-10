@@ -1,20 +1,20 @@
 # Create, publish a module in Daggerverse and use it
 
-To dig more with Dagger functionalities, we propose to build a new module to answer a simple question: how manage dependencies?
+To learn more about Dagger's capabilities, lets build a new module to answer a simple question: how to manage dependencies?
 
 To do so, we will create a Renovate module, pulish it in Daggerverse (because it's cool to share) and use it in our application's pipeline.
 
-## Renovate module creation 
+## Renovate module creation
 
 > [!NOTE]
 > Please, use the same git branch than before.
 
 At the root level of repository's codelab, create a `renovate` folder:
 ```bash
-mkdir -p renovate
+mkdir renovate
 ```
 
-Init Dagger module:
+Init a new Dagger module:
 ```bash
 cd renovate
 dagger init --sdk=go --source=.
@@ -54,14 +54,14 @@ The elements at your disposal to build this function:
     renovate/renovate:38 --platform=github --onboarding=false
     ```
 - `RenovateScan` function interface:
-  - `repository`: mandatory string 
-  - `baseBranche`: optional string with `main`  as default value
+  - `repository`: mandatory string
+  - `baseBranch`: optional string with `main` as default value
   - `renovateToken`: mandatory string. In our case, it's a GitHub's PAT (Personal Access Token) which allow the access to our repository
   - `logLevel`: optional string with `info` as default value
 - The function returns scan logs
 
 > [!NOTE]
-> Somes usefull link to help:
+> Somes useful links to help:
 > - https://docs.dagger.io/manuals/developer/secrets/
 > - https://pkg.go.dev/dagger.io/dagger#Container.WithExec
 > - https://docs.dagger.io/manuals/developer/functions/#optional-arguments
@@ -75,12 +75,12 @@ The elements at your disposal to build this function:
 > ```
 
 > [!TIP]
-> Don't forget to run `dagger develop` after function creation to refresh Dagger interface.
+> Don't forget to run `dagger develop` after function creation to refresh Daggers code generation.
 
-## Publish renovate's module
+## Publish the renovate module
 
 > [!NOTE]
-> This part will be do by speakers in live
+> This part will only be done by speakers live
 
 Follow official documentation: [Publishing Modules](https://docs.dagger.io/manuals/developer/publish-modules) and [Publish a Module](https://daggerverse.dev/publish).
 
@@ -90,7 +90,7 @@ Like before, we create a GitHub Action.
 
 > [!NOTE]
 > Use Renovate module already published on Daggerverse for this codelab
-> 
+>
 > The [documentation](https://docs.dagger.io/integrations/github) of Dagger integration for GitHub
 
 Create GitHub Actions' file:
