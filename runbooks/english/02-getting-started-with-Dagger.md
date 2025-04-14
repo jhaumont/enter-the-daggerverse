@@ -23,7 +23,7 @@ Init your Dagger module:
 dagger init --sdk=go --source=./dagger
 ```
 
-This command will download and run the container image of Dagger engine (based on your CLI version) then start it and generate skeleton of your Dagger module:
+This command will download and run the container image of Dagger engine (based on your CLI version) and generate skeleton of your Dagger module:
 - a `dagger.json` file that contains metadata,
 - a `dagger` folder:
   - a `main.go` file that will contains your module's code,
