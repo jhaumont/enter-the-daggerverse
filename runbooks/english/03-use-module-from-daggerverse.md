@@ -21,7 +21,7 @@ Now, we will use this module:
 
 ![Module Dagger vito](../dagger-module-go-vito.jpg)
 
-Direct link: https://daggerverse.dev/mod/github.com/vito/daggerverse/go
+Direct link: https://daggerverse.dev/mod/github.com/vito/daggerverse/go@f7223d2d82fb91622cbb7954177388d995a98d59
 
 ## Go module installation
 
