@@ -1,17 +1,17 @@
 # Introducing Dagger Shell
 
-The Mar 26, 2025, Dagger.io's team [announce](dagghttps://dagger.io/blog/a-shell-for-the-container-age-introducing-dagger-shell) an amazing feature: Dagger Interractive Shell.
+The Mar 26, 2025, Dagger.io's team [announced](dagghttps://dagger.io/blog/a-shell-for-the-container-age-introducing-dagger-shell) an amazing feature: Dagger Interractive Shell.
 
 This feature is very usefull to test Dagger.io and allow Dagger to be used by non-developper people.
 
 Dagger shell is not a shell like Bash, Zsh...It is more like [jq](https://jqlang.org) syntax.
 
-Let's go started.
+Let's get started.
 
 ## Launch interactive shell
 
 To start Dagger shell, just type:
-```
+```bash
 ❯ dagger
 Dagger interactive shell. Type ".help" for more information. Press Ctrl+D to exit.
 ⋈
@@ -20,7 +20,7 @@ Dagger interactive shell. Type ".help" for more information. Press Ctrl+D to exi
 
 You can exit Dagger shell by using `Ctrl+C`, `Ctrl+D` or `exit`.
 
-# Get help
+# Getting help
 
 In Dagger shell, you can use `.help` command to display help:
 ```
@@ -42,7 +42,7 @@ Enter this command:
 container | from alpine | with-exec whoami
 ```
 
-You tell to Dagger to run a container based on alpine Docker image and run commande `whoami`. But wait, you have this output:
+You tell to Dagger to run a container based on alpine Docker image and run command `whoami`. But wait, you have this output:  
 ```
 ✔ container | from alpine | with-exec whoami 0.0s
 Container@xxh3:83a64a1566b1bdba
@@ -50,24 +50,16 @@ Container@xxh3:83a64a1566b1bdba
 
 You don't see the result of `whoami` command!
 
-It's normal, you must ask to Dagger shell to get output of command and display it.
-
-Another example with `echo 'hello'` and print stdout:
-``` 
-container | from alpine | with-exec -- sh -c "echo hello"
-``` 
-
-Now, you have result of `echo` command:
+It's normal, you must ask to Dagger shell to get output of command and display it. Enter this command:
 ```
-✔ container | from alpine | with-exec -- sh -c "echo hello" | stdout 0.0s
-hello
+container | from alpine | with-exec whoami | stdout
 ```
 
-By adding `| stdout`, Dagger shell will print stdout of container on stdout of terminal.
+By adding `| stdout`, Dagger shell will print stdout of container on terminal stdout.  
 
 # Run Dagger shell in... shell 😮
 
-You can run script your Dagger shell from your unix shell, like `cat` command:
+You can script your Dagger shell from your unix shell, like `cat` command:  
 ```
 dagger <<EOF
 container \
@@ -95,7 +87,7 @@ Or:
 echo 'container | from alpine | with-exec -- sh -c "echo hello" | stdout' | dagger
 ```
 
-Or by storing command in file:
+Or by writting command in file:  
 ```
 cat > hello.dsh <<EOF
 container \
@@ -124,7 +116,7 @@ You got this error message:
 Error: input: container.from.withExec.withDirectory.id process "sh -c echo titi > /data/test" did not complete successfully: exit code: 1
 ```
 
-because, order of parameters is important. Swap lines `with-directory` and `with-exec`:
+Because, order of parameters is important. Swap lines `with-directory` and `with-exec`:
 ```
 dagger <<EOF
 container \
@@ -146,4 +138,4 @@ container \
 EOF
 ```
 
-Let's go to use module: [Use module from Daggerverse with Dagger Shell](./07-use-module-from-daggervers-with-dagger-shell.md)
+Now we have played a little bit with Dagger shell, let's use it with a module: [Use module from Daggerverse with Dagger Shell](./07-use-module-from-daggervers-with-dagger-shell.md).

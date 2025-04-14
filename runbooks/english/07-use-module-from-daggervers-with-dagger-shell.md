@@ -1,6 +1,6 @@
 # Use module from Daggerverse with Dagger Shell
 
-## Prerequierement
+## Prerequisites
 
 You must know what is Daggerverse. If don't, please read [Use module from Daggerverse](./03-use-module-from-daggerverse.md) before continue.
 
@@ -8,7 +8,7 @@ You must know what is Daggerverse. If don't, please read [Use module from Dagger
 
 To install a Dagger module, first init Dagger env in `hello-sh` folder:
 ```
-# To install module, we need SDK. Bug will be fix soon
+# To install module, we need SDK. It's a bug and willl be fixed soon  
 dagger init --sdk=go --source=./dagger
 ```
 
@@ -30,7 +30,7 @@ dagger <<< .help
   git-info      A Dagger Module to extract information about a git reference.
 ```
 
-You see last line git-info is loaded.
+The last line shows that git-info is loaded.  
 
 Now get current git ref:
 ```
