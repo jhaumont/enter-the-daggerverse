@@ -13,7 +13,7 @@ func (m *Renovate) RenovateScan(
 	repository string,
 	// +optional
 	// +default="main"
-	baseBranche string,
+	baseBranch string,
 	renovateToken *dagger.Secret,
 	// +optional
 	// +default="info"
@@ -23,7 +23,7 @@ func (m *Renovate) RenovateScan(
 		From("renovate/renovate:38").
 		WithSecretVariable("RENOVATE_TOKEN", renovateToken).
 		WithEnvVariable("RENOVATE_REPOSITORIES", repository).
-		WithEnvVariable("RENOVATE_BASE_BRANCHES", baseBranche).
+		WithEnvVariable("RENOVATE_BASE_BRANCHES", baseBranch).
 		WithEnvVariable("LOG_LEVEL", logLevel).
 		WithExec([]string{"--platform=github", "--onboarding=false"}, dagger.ContainerWithExecOpts{UseEntrypoint: true}).
 		Stdout(ctx)

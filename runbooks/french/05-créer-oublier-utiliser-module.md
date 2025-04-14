@@ -14,7 +14,7 @@ A la racine du repository du codelab, créez un répertoire `renovate` :
 mkdir -p renovate
 ```
 
-Initialisez votre module de Dagger :
+Initialisez votre nouveau module de Dagger :
 ```bash
 cd renovate
 dagger init --sdk=go --source=.
@@ -55,7 +55,7 @@ Les éléments à votre dispositon pour construire cette fonction :
     ```
 - L'interface de la fonction `RenovateScan` :
   - `repository` : string obligatoire
-  - `baseBranche` : string facultatif avec la valeur par défaut "main"
+  - `baseBranch` : string facultatif avec la valeur par défaut "main"
   - `renovateToken` : string facultatif. Dans notre cas, c'est un PAT (Personal Access Token) GitHub permettant d'accéder au repository
   - `logLevel` : string facultatif avec la valeur par défaut `info`
 - Le résultat attendu de la fonction : les logs du scan
@@ -90,7 +90,7 @@ De la même manière que dans la partie précédente, nous allons construire une
 
 > [!NOTE]
 > Utilisez le module Renovate qui a déjà été publié sur le Daggerverse pour ce codelab
-> 
+>
 > La [documentation](https://docs.dagger.io/integrations/github) de l'intégration Dagger pour GitHub
 
 Créez le fichier de la GitHub Actions :

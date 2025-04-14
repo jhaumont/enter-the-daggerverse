@@ -26,6 +26,6 @@ Pour tester la GitHub Actions, pousser votre branche et créer une Pull Request.
 
 Vous avez maintenant un pipeline de CI pour l'application `hello`.
 
-Le pipeline s'exécute sur GitHub Actions en utilisant les fonctions Dagger que vous avez créées.
+Le pipeline s'exécute sur GitHub Actions en utilisant les fonctions Dagger que vous avez créées. Cela vous permet d'utiliser le même pipeline localement et dans les GitHub actions.
 
 Pour aller plus loin, vous pouvez [créer, publier un module dans le daggerverse et l'utiliser](05-créer-oublier-utiliser-module.md) dans un pipeline.

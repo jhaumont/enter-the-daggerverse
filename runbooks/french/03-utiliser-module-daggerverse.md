@@ -4,7 +4,7 @@
 
 Allez sur la page de [Daggerverse](https://daggerverse.dev)
 
-Cette page contient l'ensemble des modules Dagger mis à disposition par la communauté.
+Cette page contient l'ensemble des modules Dagger publiés par la communauté.
 
 Afin d'améliorer notre pipeline, nous allons chercher un module **Go** avec des fonctions utilitaires.
 
@@ -15,7 +15,7 @@ Cherchez un module avec le mot clé [go](https://daggerverse.dev/search?q=go) co
 > - Certains correspondent à d'anciennes versions du même module qui a changé de répertoire dans son repository source voir de repository,
 > - Certains ne sont plus maintenus,
 > 
-> Il n'existe aucun moyen de connaitre la fiabilité du développeur à l'origine du module (comme c'est le cas pour [npmjs](https://www.npmjs.com)).
+> Il n'existe actuellement aucun moyen de connaitre la fiabilité du développeur à l'origine du module (comme c'est le cas pour [npmjs](https://www.npmjs.com)).
 
 Pour la suite, nous allons utiliser le module qui correspond à nos besoins :
 
@@ -31,7 +31,7 @@ dagger install github.com/vito/daggerverse/go@v0.0.1
 ```
 
 > [!NOTE]
-> Il est aussi possible d'utiliser des modules non disponibles dans le Daggerverse. Plus d'informations dans la documentation officielle [Using Modules from Remote Repositories](https://docs.dagger.io/api/remote-modules).
+> Il est aussi possible d'utiliser des modules non disponibles dans le Daggerverse (ie repository git privés). Plus d'informations dans la documentation officielle [Using Modules from Remote Repositories](https://docs.dagger.io/api/remote-modules).
 
 Pour découvrir le module, afficher son aide :
 ```bash
@@ -46,9 +46,9 @@ dagger -m go functions
 Une autre solution est de regarder directement le code source : https://github.com/vito/daggerverse/blob/main/go/main.go
 
 > [!NOTE]
-> Ici on utilise un module Go programmé en Go. Le module aurait pu être écrit dans un autre language (Typescript ou Python).
+> Ici on utilise un module programmé en Go. On peut utilisé un modulé écrit dans un autre langage supporté (Typescript ou Python) et l'installer dans notre module, quel que soit le langage de programmation des autres modules.
 >
-> Il n'est pas nécéssaire que la CI soit dans le même langage que le code source de l'application à construire.
+> Il n'est pas nécéssaire que la CI soit dans le même langage que le code source de l'application à construire. Nous pourrions utiliser le SDK Go de Dagger pour créer une application Python, par exemple.
 
 ## Utiliser le module Go dans le pipeline de l'application
 
@@ -61,7 +61,7 @@ type Hello struct {
 }
 ```
 
-Il va nous permettre de manipuler une instance de la structure exposée par le module Go.
+Il va nous permettre de manipuler les fonctions de la structure exposée par le module Go.
 
 Remplacez la fonction `BuildEnv` par le code suivant dans le ficher `dagger/main.go` :
 ```go
@@ -98,7 +98,7 @@ func (m *Hello) Build(source *dagger.Directory) *dagger.Container {
 }
 ```
 
-Dorénavant, cette fonction fait appel à `BuildEnv` pour sélectionner son contexte de build.
+Dorénavant, cette fonction fait appel à `BuildEnv` pour construire l'environnement de build.
 
 Puis la fonction `Build` du module Go importé précédemment (le module qui a été choisi dans le Daggerverse) pour réaliser la construction de l'application. 
 
@@ -106,7 +106,7 @@ L'option `Static: true` est l'équivalant de `WithEnvVariable("CGO_ENABLED", "0"
 
 > [!NOTE]
 > Dans Dagger, les arguments d'une fonction peuvent être [optionnels](https://docs.dagger.io/manuals/developer/functions/#optional-arguments) en l'indiquant par un commentaire dans le code de la fonction.
-> 
+>
 > Il est aussi possible de donner une valeur par défaut.
 
 > [!NOTE]

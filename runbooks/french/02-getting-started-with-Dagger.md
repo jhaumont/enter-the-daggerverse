@@ -23,9 +23,9 @@ Initialisez votre module de Dagger :
 dagger init --sdk=go --source=./dagger
 ```
 
-Cette commande va télécharger l'image docker du Dagger engine, le démarrer et générer votre structre de module Dagger :
+Cette commande va télécharger l'image du conteneur Dagger engine (liée à votre version du CLI), le démarrer et générer votre structre de module Dagger :
 - Un fichier `dagger.json` de metadata,
-- Un répertoire `dagger` : 
+- Un répertoire `dagger` :
   - Un fichier `main.go` qui va contenir le code de votre module,
   - Un ficher `dagger.gen.go` et un répertoire `internal` contenant le code utilitaire généré par Dagger,
 
@@ -94,7 +94,7 @@ return dag.Container().
 ## Construire l'environnement pour le pipeline de CI de l'application
 
 > [!NOTE]
-> Pour les méthodes publiques, le langage **Go** utilise la convention `PascalCase`. C'est à dire, que chaque mot commence par une majuscule, le tout concaténé. Dans notre exemple, nous avant la méthode publique `BuildEnv`.
+> Pour les méthodes publiques, le langage **Go** utilise la convention `PascalCase`. C'est à dire, que chaque mot commençant par une majuscule sera exposé. Dans notre exemple, nous avant la méthode publique `BuildEnv`.
 >
 > Toutefois, pour appeler la méthode publique `BuildEnv` depuis la ligne de commande Dagger, le nom va utiliser la convention `kebab-case`. Ainsi, la méthode publique `BuildEnv` devra être appelée avec le nom `build-env`.
 >
@@ -106,12 +106,12 @@ dagger call build-env --source=.
 ```
 
 Vous allez voir apparaître sur le terminal des traces **interactives**.
-Essayez de les manipuler.
-Exemple, pour augmenter la verbosité des traces pendant l'exécution, vous pouvez appuyer sur la touche `+`.
+Pour augmenter la verbosité des traces pendant l'exécution, vous pouvez appuyer sur la touche `+` (plus vous appuyez, plus la verbosité augmente).
 
 > [!NOTE]
 > Toutes les traces & spans que vous voyez s'afficher sont de l'OpenTelemetry, comme pour une requête HTTP.
 > Cela peut être perturbant au debut et très lié à Docker. 
+> Cependant, la télémétrie incluse est très utile pour déboguer et comprendre votre code et constitue un outil incroyable lors de l'utilisation de Dagger.
 > Avec le temps, on s'y fait bien.
 
 A la fin de l'exécution de la commande, vous allez voir ce message :
@@ -133,7 +133,7 @@ Il s'agit d'une petite blague de Solomon Hykes dans le fichier [dagql/idtui/fron
 var skipLoggedOutTraceMsgEnvs = []string{"NOTHANKS", "SHUTUP", "GOAWAY", "STOPIT"}
 ```
 
-Vous avez maintenant un environnement d'exécution **Go** contenant les sources de votre projet à votre disposition.
+Vous avez maintenant un environnement d'exécution **Go** contenant les sources de votre projet à votre disposition et cohabitant avec les sources de votre application.
 
 ## Dagger cloud
 
@@ -160,11 +160,11 @@ Pour ne plus avoir à le faire à chaque ouverture de session/terminal, il faut 
 
 ## Intéragir avec le résultat de votre fonction
 
-Lorsque votre fonction retourne une image docker, vous avez la possibilité d'interagir avec cette dernière pour inspecter son contenu.
+Lorsque votre fonction retourne un type "container", vous avez la possibilité d'interagir avec cette dernière pour inspecter son contenu.
 
 Lancer à nouveau la fonction `build-env` avec la commande `terminal` :
 ```bash
-dagger call build-env --source=. terminal --cmd=sh
+dagger call build-env --source=. terminal
 ```
 
 > [!WARNING]
@@ -189,12 +189,11 @@ Lancer la commande :
 dagger call build --source=.
 ```
 
-L'application a été compilée et l'image docker construite !
-La sortie/résultat de la fonction est une image docker prête à l'emploi !
+L'application a été compilée et le resultat de la fonction est un conteneur !
 
 Relancez la compilation pour intéragir avec le conteneur :
 ```bash
-dagger call build --source=. terminal --cmd=sh
+dagger call build --source=. terminal
 ```
 
 > [!NOTE]
@@ -211,7 +210,7 @@ Tapez `exit` pour quitter le terminal lancé dans le container.
 
 ## Tester l'application
 
-Maintenant que nous avons construit l'image docker de l'application, testons la sur notre poste !
+Maintenant que nous avons construit le conteneur de l'application, testons la sur notre poste !
 
 Démarrez l'application avec la commande `as-service` de Dagger :
 ```bash
@@ -247,6 +246,6 @@ Cliquez sur le lien associé et ajoutez `/devfest` à la fin de l'url de la page
 > [!NOTE]
 > Si vous n'utilisez pas le codespace, ouvrez votre navigateur et entrez l'URL suivante `localhost:8080/devfest`.
 
-Vous avez maintenant un ensemble de fonctions utilisables pour construire un pipeline de CI pour votre application, avec n'importe quel outil de CI/CD.
+Vous avez maintenant un ensemble de fonctions réutilisables pour construire un pipeline de CI pour votre application, avec n'importe quel outil de CI/CD (Gitlab, Github actions, etc).
 
-Pour la suite, vous allez utiliser un module externe dans les fonctions. Rendez-vous au chapitre [Utiliser un module du Daggerverse](03-utiliser-module-daggerverse.md).
+Pour la suite, vous allez utiliser un module externe dans les fonctions pour réduire la complexité de votre module. Rendez-vous au chapitre [Utiliser un module du Daggerverse](03-utiliser-module-daggerverse.md).
