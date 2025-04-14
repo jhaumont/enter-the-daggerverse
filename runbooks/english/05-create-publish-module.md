@@ -11,7 +11,7 @@ To do so, we will create a Renovate module, pulish it in Daggerverse (because it
 
 At the root level of repository's codelab, create a `renovate` folder:
 ```bash
-mkdir renovate
+mkdir -p renovate
 ```
 
 Init a new Dagger module:
