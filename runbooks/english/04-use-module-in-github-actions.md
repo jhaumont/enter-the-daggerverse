@@ -28,4 +28,4 @@ You now have a CI pipeline for the `hello` application!
 
 The pipeline is executed on GitHub Action using our Dagger module! This allows you to use the same pipeline locally and in GitHub Actions.
 
-To go further, you can [Create, publish a module in Daggerverse and use it](05-create-publish-module.md).
+Now, we will expore the Dagger shell, to do same but without any code: [Introducing Dagger Shell](./05-use-interactive-dagger-shell.md).

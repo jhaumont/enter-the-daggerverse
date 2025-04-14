@@ -30,9 +30,9 @@ dagger <<< .help
   git-info      A Dagger Module to extract information about a git reference.
 ```
 
-The last line shows that git-info is loaded.  
+The last line shows that `git-info` is loaded.  
 
-Now get current git ref:
+Now use this module, to get current git ref:
 ```
 dagger <<< "git-info . | ref"
 ✔ connect 0.2s
@@ -43,4 +43,8 @@ dagger <<< "git-info . | ref"
 HEAD
 ```
 
-It works!
+It works 🎉
+
+## Dagger module
+
+We have play with basics of Dagger. To go further, you can [Create, publish a module in Daggerverse and use it](07-create-publish-module.md) with Go.

@@ -1,8 +1,8 @@
 # Introducing Dagger Shell
 
-The Mar 26, 2025, Dagger.io's team [announced](dagghttps://dagger.io/blog/a-shell-for-the-container-age-introducing-dagger-shell) an amazing feature: Dagger Interractive Shell.
+The Mar 26, 2025, Dagger.io's team [announced](https://dagger.io/blog/a-shell-for-the-container-age-introducing-dagger-shell) an amazing feature: Dagger Interractive Shell.
 
-This feature is very usefull to test Dagger.io and allow Dagger to be used by non-developper people.
+This feature is very usefull to test Dagger.io.
 
 Dagger shell is not a shell like Bash, Zsh...It is more like [jq](https://jqlang.org) syntax.
 
@@ -42,7 +42,7 @@ Enter this command:
 container | from alpine | with-exec whoami
 ```
 
-You tell to Dagger to run a container based on alpine Docker image and run command `whoami`. But wait, you have this output:  
+You tell to Dagger to run a container based on alpine Docker image and run command `whoami`. But wait, you have this output:
 ```
 ✔ container | from alpine | with-exec whoami 0.0s
 Container@xxh3:83a64a1566b1bdba
@@ -127,6 +127,7 @@ EOF
 ```
 
 If you got to the `/workspaces/enter-the-daggerverse/hello-sh` folder, file `test` is not here.
+The folder is like copied in container.
 You must `export` it:
 ```
 dagger <<EOF
@@ -138,4 +139,4 @@ container \
 EOF
 ```
 
-Now we have played a little bit with Dagger shell, let's use it with a module: [Use module from Daggerverse with Dagger Shell](./07-use-module-from-daggervers-with-dagger-shell.md).
+Now we have played a little bit with Dagger shell, let's use it with a module: [Use module from Daggerverse with Dagger Shell](./06-use-module-from-daggervers-with-dagger-shell.md).
