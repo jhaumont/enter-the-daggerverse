@@ -1,6 +1,6 @@
 # Enter the Daggerverse
 
-Welcome to this codelab, created for [Devfest Nantes 2024](https://devfest2024.gdgnantes.com) in west coast in France!
+Welcome to this codelab, created for [Devfest Nantes 2024](https://devfest2024.gdgnantes.com) in west coast in France! And now updated for [Devoxx France 2025](https://www.devoxx.fr/).
 
 To start, please follow the first part called [Setup](runbooks/english/01-setup.md).
 
@@ -10,7 +10,7 @@ All of content of this repository is published [MIT](LICENSE) license.
 
 ## French version
 
-Bienvenue dans ce codelab créé pour le [Devfest Nantes 2024](https://devfest2024.gdgnantes.com) !
+Bienvenue dans ce codelab créé pour le [Devfest Nantes 2024](https://devfest2024.gdgnantes.com) ! Et mis à jour pour le [Devoxx France 2025](https://www.devoxx.fr/).
 
 Pour commencer, suivez la partie [Setup](runbooks/french/01-setup.md) et laissez vous guider.
 

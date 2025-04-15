@@ -115,20 +115,14 @@ You can increase verbosity during execution by pressing the `+` key. The more yo
 At the end of command execution, you will see this message:
 ![](../dagger-cloud-traces.png)
 
-By default, Dagger will try to send traces to Dagger cloud. If you don't want this behavior, you can disable it by setting environment variables called `NOTHANKS`, `SHUTUP`, `GOAWAY` or `STOPIT`:
+By default, Dagger will try to send traces to Dagger cloud. If you don't want this behavior, you can disable it by setting environment variables called `DAGGER_NO_NAG`:
 
 ```bash
-export STOPIT=1
+export DAGGER_NO_NAG=1
 dagger call build-env --source=.
 ```
 
 Now, the message to setup tracing has disappeared.
-
-If you find this strange? You are right, it's just a funny change done by Solomon Hykes in [dagql/idtui/frontend.go](https://github.com/dagger/dagger/commit/6238db7a484daa6e4ad14032a9dce23cbc280643#diff-f5226e94ea6152ddc0519aecff9194c2f24160f2b52e35be6affabd761b73a27R28):
-```
-// having a bit of fun with these. cc @vito @jedevc
-var skipLoggedOutTraceMsgEnvs = []string{"NOTHANKS", "SHUTUP", "GOAWAY", "STOPIT"}
-```
 
 Now you have a **Go** execution environment within the source code of your project and checked in alongside your application changes.
 
@@ -138,7 +132,7 @@ During this codelab, we are going to use **Dagger cloud** to help with tracing a
 
 Please, enable traces by removing the environment variable if you set it:
 ```bash
-unset STOPIT
+unset DAGGER_NO_NAG
 ```
 
 To see traces, you must create an account (it's free) on [Dagger cloud](https://docs.dagger.io/manuals/user/cloud-get-started).
@@ -146,7 +140,7 @@ To see traces, you must create an account (it's free) on [Dagger cloud](https://
 > [!TIP]
 > For this codelab, the easiest way to create an account on **Dagger cloud** is to use `Sign in with GitHub` button.
 
-At login, create an organization named `devfest`.
+At login, create an organization named `devoxx`.
 A token will be given, export it in you terminal:
 
 ```bash
@@ -214,10 +208,10 @@ Start the application with `as-service` Dagger command:
 dagger call build --source=. as-service up --ports=8080:666
 ```
 
-Click on popup button in VSCode and add `/devfest` at the end.
+Click on popup button in VSCode and add `/devoxx` at the end.
 
 > [!NOTE]
-> If you don't use codespace, open your internet browser and enter this URL `localhost:8080/devfest`.
+> If you don't use codespace, open your internet browser and enter this URL `localhost:8080/devoxx`.
 
 > [!NOTE]
 > But, wait a minute! Where did the `as-service` command come from? I can't find it with `dagger --help`?
@@ -239,10 +233,10 @@ docker run --rm --detach --publish 8080:666 ttl.sh/hello-<ID>
 In the `PORTS` tab, next to `TERMINAL` tab, add `8080` port.
 
 
-Click on the associated link, and add `/devfest` at the end of url.
+Click on the associated link, and add `/devoxx` at the end of url.
 
 > [!NOTE]
-> If you don't use codespace, open your internet browser and enter this URL `localhost:8080/devfest`.
+> If you don't use codespace, open your internet browser and enter this URL `localhost:8080/devoxx`.
 
 Now, you have some reusable functions to build your pipeline with any CI/CD engine (e.g. GitHub Actions, GitLab Runners).
 

@@ -117,21 +117,14 @@ Pour augmenter la verbosité des traces pendant l'exécution, vous pouvez appuye
 A la fin de l'exécution de la commande, vous allez voir ce message :
 ![](../dagger-cloud-traces.png)
 
-Par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. Vous pouvez désactiver ce comportement, en valorisant une des variables d'environnement suivantes `NOTHANKS`, `SHUTUP`, `GOAWAY` or `STOPIT`:
+Par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. Vous pouvez désactiver ce comportement, en valorisant une des variables d'environnement suivantes `DAGGER_NO_NAG`:
 
 ```bash
-export STOPIT=1
+export DAGGER_NO_NAG=1
 dagger call build-env --source=.
 ```
 
 Le message a disparu.
-
-Vous trouvez qu'avoir 4 variables d'environnement pour faire la même chose c'est un peu étrange ?
-Il s'agit d'une petite blague de Solomon Hykes dans le fichier [dagql/idtui/frontend.go](https://github.com/dagger/dagger/commit/6238db7a484daa6e4ad14032a9dce23cbc280643#diff-f5226e94ea6152ddc0519aecff9194c2f24160f2b52e35be6affabd761b73a27R28):
-```
-// having a bit of fun with these. cc @vito @jedevc
-var skipLoggedOutTraceMsgEnvs = []string{"NOTHANKS", "SHUTUP", "GOAWAY", "STOPIT"}
-```
 
 Vous avez maintenant un environnement d'exécution **Go** contenant les sources de votre projet à votre disposition et cohabitant avec les sources de votre application.
 
@@ -141,7 +134,7 @@ Afin d'exploiter plus facilement les traces, nous allons utiliser le **Dagger cl
 
 Pour réactiver l'envoi de traces, le plus simple est de supprimer la variable d'environnement :
 ```bash
-unset STOPIT
+unset DAGGER_NO_NAG
 ```
 
 Afin de pouvoir visualiser les traces, vous devez créer un compte (gratuit) sur le [Dagger cloud](https://docs.dagger.io/manuals/user/cloud-get-started).
@@ -149,7 +142,7 @@ Afin de pouvoir visualiser les traces, vous devez créer un compte (gratuit) sur
 > [!TIP]
 > Afin de faciliter la suite du TP, si vous décidez de créer un compte **Dagger cloud**, le plus simple est d'utiliser votre compte GitHub (le bouton `Sign in with GitHub`).
 
-Ensuite, créez l'organisation `devfest`.
+Ensuite, créez l'organisation `devoxx`.
 Un token vous est proposé. Exporter le:
 
 ```bash
@@ -217,10 +210,10 @@ Démarrez l'application avec la commande `as-service` de Dagger :
 dagger call build --source=. as-service up --ports=8080:666
 ```
 
-Cliquez sur le bouton proposé par VSCode et ajouter `/devfest` à la fin de l'url de la page.
+Cliquez sur le bouton proposé par VSCode et ajouter `/devoxx` à la fin de l'url de la page.
 
 > [!NOTE]
-> Si vous n'utilisez pas le codespace, ouvrez votre navigateur et entrez l'URL suivante `localhost:8080/devfest`.
+> Si vous n'utilisez pas le codespace, ouvrez votre navigateur et entrez l'URL suivante `localhost:8080/devoxx`.
 
 > [!NOTE]
 > Mais d'où vient la comment `as-service` introuvable lorsqu'on lance la commande `dagger --help` ?
@@ -241,10 +234,10 @@ docker run --rm --detach --publish 8080:666 ttl.sh/hello-<ID>
 
 Dans l'onglet `PORTS` (à côté de celui de `TERMINAL`), ajoutez le port `8080`.
 
-Cliquez sur le lien associé et ajoutez `/devfest` à la fin de l'url de la page.
+Cliquez sur le lien associé et ajoutez `/devoxx` à la fin de l'url de la page.
 
 > [!NOTE]
-> Si vous n'utilisez pas le codespace, ouvrez votre navigateur et entrez l'URL suivante `localhost:8080/devfest`.
+> Si vous n'utilisez pas le codespace, ouvrez votre navigateur et entrez l'URL suivante `localhost:8080/devoxx`.
 
 Vous avez maintenant un ensemble de fonctions réutilisables pour construire un pipeline de CI pour votre application, avec n'importe quel outil de CI/CD (Gitlab, Github actions, etc).
 
