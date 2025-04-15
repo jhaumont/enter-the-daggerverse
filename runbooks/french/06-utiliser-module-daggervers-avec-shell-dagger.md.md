@@ -1,9 +1,5 @@
 # Utiliser un module publié sur Daggerverse avec le shell Dagger
 
-## Prérequis
-
-Vous devez savoir ce qu'est le Daggerverse. Si ce n'est pas le case, lisez le chapitre [Utiliser un module du Daggerverse](./03-utiliser-module-daggerverse.md) avant de continuer.
-
 ## Installer un module - Git info
 
 Pour installer un module Dagger, vous devez initialisze l'environnement Dagger dans le répertoire `hello-sh` :
