@@ -4,7 +4,7 @@ Le 26 Mars 2025, l'équipe de Dagger.io [a annoncé](https://dagger.io/blog/a-sh
 
 Cette nouvelle fonctionnalité est très pratique pour tester Dagger.
 
-Le shell Dagger peut prêter à confusion, il ne s'agit pas d'un shell comme Bash, Zsh, mais plus d'un langage très simple d'interraction avec Dagger comme la syntaxe avec [jq](https://jqlang.org).
+Le terme "shell" peut prêter à confusion. Il ne s'agit pas d'un shell comme Bash, Zsh, mais plus d'un langage très simple d'interraction avec Dagger, similaire à la syntaxe [jq](https://jqlang.org).
 
 ## Langement du shell
 
