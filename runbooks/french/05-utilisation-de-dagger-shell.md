@@ -112,7 +112,7 @@ L'ennuie, c'est que vous allez obtenir ce message :
 Error: input: container.from.withExec.withDirectory.id process "sh -c echo titi > /data/test" did not complete successfully: exit code: 1
 ```
 
-Oui, car l'ordre des paramètres est important. C'est un peu comme enchainer des commandes dans un shell. Si vous intervertissez les lignes `with-directory` et `with-exec`:
+Oui, car l'ordre des paramètres est important. C'est un peu comme enchainer des commandes dans un shell. Intervertissez les lignes `with-directory` et `with-exec`:
 ```
 dagger <<EOF
 container \
