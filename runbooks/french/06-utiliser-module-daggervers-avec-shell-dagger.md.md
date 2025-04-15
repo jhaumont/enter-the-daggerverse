@@ -4,7 +4,7 @@
 
 Pour installer un module Dagger, vous devez initialisze l'environnement Dagger dans le répertoire `hello-sh` :
 ```
-# Un bug actullement oblige de spécifer un SDK
+# Un bug oblige de spécifer un SDK
 dagger init --sdk=go --source=./dagger
 ```
 
