@@ -135,4 +135,4 @@ container \
 EOF
 ```
 
-Maintenant que nous avoir tester un peut le shell Dagger, nous allons utiliser un module : [Utiliser un module publié sur Daggerverse avec le shell Dagger](./06-utiliser-module-daggervers-avec-shell-dagger.md).
+Maintenant que nous avons tester le shell Dagger, nous allons utiliser un module : [Utiliser un module publié sur Daggerverse avec le shell Dagger](./06-utiliser-module-daggervers-avec-shell-dagger.md).
