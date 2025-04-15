@@ -124,7 +124,7 @@ EOF
 
 Si vous allez dans le répertoire `/workspaces/enter-the-daggerverse/hello-sh` aucun fichier `test` n'est présent.
 Lorsque vous monter un répertoire dans un container, il est en quelque sorte copié dans le container.
-Il faut donc exporter le fichier avec `export` :
+Il faut donc exporter le fichier avec `export` pour le récupérer dans le répertoire `test` :
 ```
 dagger <<EOF
 container \
