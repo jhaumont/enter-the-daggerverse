@@ -8,7 +8,7 @@ Cette page contient l'ensemble des modules Dagger publiés par la communauté.
 
 Afin d'améliorer notre pipeline, nous allons chercher un module **Go** avec des fonctions utilitaires.
 
-Cherchez un module avec le mot clé [go](https://daggerverse.dev/search?q=go) contenant fonctions utilitaires de type `build`, `test`, `generate`, etc.
+Cherchez un module avec le mot clé [go](https://daggerverse.dev/search?q=go) contenant les fonctions utilitaires de type `build`, `test`, `generate`, etc.
 
 > [!NOTE]
 > Il y a de très nombreux résultats :
@@ -110,7 +110,7 @@ L'option `Static: true` est l'équivalant de `WithEnvVariable("CGO_ENABLED", "0"
 > Il est aussi possible de donner une valeur par défaut.
 
 > [!NOTE]
-> Une convention (non documentée) pour les argument optionnels, est de mettre l'argument dans une strucutre.
+> Une convention (non documentée) pour les argument optionnels, est de mettre l'argument dans une structure.
 > Cette structure est celle du module (ici `dagger.Go`).
 >
 > Elle est du format `dagger.<Package><Fonction>Opts`.

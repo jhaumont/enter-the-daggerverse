@@ -10,9 +10,18 @@ Let's get started.
 
 ## Launch interactive shell
 
+Open folder `hello-sh` :
+```bash
+cd /workspaces/enter-the-daggerverse/hello-sh
+```
+
 To start Dagger shell, just type:
 ```bash
-❯ dagger
+dagger
+```
+
+With the result:
+```
 Dagger interactive shell. Type ".help" for more information. Press Ctrl+D to exit.
 ⋈
 ─ esc nav mode · > run prompt ────────────────────────────────────────────────────
@@ -25,10 +34,10 @@ You can exit Dagger shell by using `Ctrl+C`, `Ctrl+D` or `exit`.
 In Dagger shell, you can use `.help` command to display help:
 ```
 ✔ .help 0.0s
-  cache-volume   Constructs a cache volume for a given cache key.                                                                                                                                                                           
-  container      Creates a scratch container.                                                                                                                                                                                               
+  cache-volume   Constructs a cache volume for a given cache key.
+  container      Creates a scratch container.
   directory      Creates an empty directory.
-...
+  ...
 ```
 
 You can have information on module or command. See [Built-in help](https://docs.dagger.io/features/shell/#built-in-help) section of official documentation.
@@ -139,4 +148,4 @@ container \
 EOF
 ```
 
-Now we have played a little bit with Dagger shell, let's use it with a module: [Use module from Daggerverse with Dagger Shell](./06-use-module-from-daggervers-with-dagger-shell.md).
+Now we have played a little bit with Dagger shell, let's use it with a module: [Use module from Daggerverse with Dagger Shell](./06-utiliser-module-daggerverse-avec-shell-dagger.md).

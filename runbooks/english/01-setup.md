@@ -27,10 +27,10 @@ To run this codelab, your need install all of components bellow:
 - Install **Docker for Windows/Mac** or **Rancher Desktop**
 - Install [Git](https://git-scm.com/)
 - Install [Go](https://go.dev/doc/install) language `1.23.x`
-- Install [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.18.2`
+- Install [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.18.3`
   - Example for linux:
     ```bash
-    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.2 $HOME/.local/bin sh
+    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.3 $HOME/.local/bin sh
     ```
 
 > [!TIP]

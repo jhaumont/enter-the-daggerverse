@@ -4,13 +4,22 @@ Le 26 Mars 2025, l'équipe de Dagger.io [a annoncé](https://dagger.io/blog/a-sh
 
 Cette nouvelle fonctionnalité est très pratique pour tester Dagger.
 
-Le terme "shell" peut prêter à confusion. Il ne s'agit pas d'un shell comme Bash, Zsh, mais plus d'un langage très simple d'interraction avec Dagger, similaire à la syntaxe [jq](https://jqlang.org).
+Le terme "shell" peut prêter à confusion. Il ne s'agit pas d'un shell comme Bash, Zsh, mais plus d'un langage très simple d'interaction avec Dagger, similaire à la syntaxe [jq](https://jqlang.org).
 
 ## Langement du shell
 
+Ouvrez le répertoire `hello-sh` :
+```bash
+cd /workspaces/enter-the-daggerverse/hello-sh
+```
+
 Pour démarrer le shell Dagger, exécutez simplement la commande :
 ```bash
-❯ dagger
+dagger
+```
+
+Avec pour résultat :
+```
 Dagger interactive shell. Type ".help" for more information. Press Ctrl+D to exit.
 ⋈
 ─ esc nav mode · > run prompt ────────────────────────────────────────────────────
@@ -23,10 +32,10 @@ Vous pouvez quitter le shell avec `Ctrl+C`, `Ctrl+D` ou `exit`.
 Lorsque vous êtes dans le shell Dagger, vous pouvez utiliser la commande `.help` pour afficher de l'aide :
 ```
 ✔ .help 0.0s
-  cache-volume   Constructs a cache volume for a given cache key.                                                                                                                                                                           
-  container      Creates a scratch container.                                                                                                                                                                                               
+  cache-volume   Constructs a cache volume for a given cache key.
+  container      Creates a scratch container.
   directory      Creates an empty directory.
-...
+  ...
 ```
 
 Vous pouvez avoir aussi des informations sur un module ou une comme. Reportez vous à la documentation officiel : [Built-in help](https://docs.dagger.io/features/shell/#built-in-help).
@@ -51,7 +60,7 @@ Ce comportement est normal. Il faut explicitement demande à Dagger de récupér
 container | from alpine | with-exec whoami | stdout
 ```
 
-En ajouter `| stdout`, Dagger affiche la sortie standard de la commande.
+En ajoutant  `| stdout`, Dagger affiche la sortie standard de la commande.
 
 # Exécuter le shell Dagger dans... un shell 😮
 
@@ -124,7 +133,7 @@ EOF
 
 Si vous allez dans le répertoire `/workspaces/enter-the-daggerverse/hello-sh` aucun fichier `test` n'est présent.
 Lorsque vous monter un répertoire dans un container, il est en quelque sorte copié dans le container.
-Il faut donc exporter le fichier avec `export` pour le récupérer dans le répertoire `test` :
+Il faut donc exporter le fichier avec `export` pour le récupérer dans le répertoire `hello-sh` :
 ```
 dagger <<EOF
 container \

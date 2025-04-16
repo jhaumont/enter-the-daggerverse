@@ -115,7 +115,7 @@ You can increase verbosity during execution by pressing the `+` key. The more yo
 At the end of command execution, you will see this message:
 ![](../dagger-cloud-traces.png)
 
-By default, Dagger will try to send traces to Dagger cloud. If you don't want this behavior, you can disable it by setting environment variables called `DAGGER_NO_NAG`:
+By default, Dagger will try to send traces to Dagger cloud. If you don't want this behavior, you can disable it by setting environment variable called `DAGGER_NO_NAG`:
 
 ```bash
 export DAGGER_NO_NAG=1

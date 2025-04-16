@@ -3,19 +3,23 @@
 ## Install a module - Git info
 
 To install a Dagger module, first init Dagger env in `hello-sh` folder:
-```
+```bash
 # To install module, we need SDK. It's a bug and willl be fixed soon  
 dagger init --sdk=go --source=./dagger
 ```
 
 Then, install a module:
-```
+```bash
 dagger install github.com/vbehar/daggerverse/git-info@v0.12.1
 ```
 
 Test if module is loaded:
-```
+```bash
 dagger <<< .help
+```
+
+With the result:
+```
 ✔ connect 0.2s
 ✔ load module 0.7s
 ✔ serving dependency modules 0.0s
@@ -24,13 +28,18 @@ dagger <<< .help
   grep-dir         Returns lines that match a pattern in the files of the provided Directory
 
   git-info      A Dagger Module to extract information about a git reference.
+  ...
 ```
 
 The last line shows that `git-info` is loaded.  
 
 Now use this module, to get current git ref:
-```
+```bash
 dagger <<< "git-info . | ref"
+```
+
+With the result:
+```
 ✔ connect 0.2s
 ✔ load module 0.7s
 ...

@@ -117,7 +117,7 @@ Pour augmenter la verbosité des traces pendant l'exécution, vous pouvez appuye
 A la fin de l'exécution de la commande, vous allez voir ce message :
 ![](../dagger-cloud-traces.png)
 
-Par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. Vous pouvez désactiver ce comportement, en valorisant une des variables d'environnement suivantes `DAGGER_NO_NAG`:
+Par défaut, Dagger va essayer d'envoyer les traces dans le Dagger cloud. Vous pouvez désactiver ce comportement, en valorisant la variable d'environnement suivante `DAGGER_NO_NAG`:
 
 ```bash
 export DAGGER_NO_NAG=1
