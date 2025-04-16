@@ -148,4 +148,4 @@ container \
 EOF
 ```
 
-Now we have played a little bit with Dagger shell, let's use it with a module: [Use module from Daggerverse with Dagger Shell](./06-utiliser-module-daggerverse-avec-shell-dagger.md).
+Now we have played a little bit with Dagger shell, let's use it with a module: [Use module from Daggerverse with Dagger Shell](./06-use-module-from-daggerverse-with-dagger-shell).
