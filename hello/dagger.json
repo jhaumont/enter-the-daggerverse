@@ -1,0 +1,20 @@
+{
+  "name": "hello",
+  "engineVersion": "v0.18.3",
+  "sdk": {
+    "source": "go"
+  },
+  "dependencies": [
+    {
+      "name": "dagger-ghcr-demo",
+      "source": "github.com/daggerverse/dagger-ghcr-demo@v0.1.5",
+      "pin": "f0cbd8bc8393bf7f8cbee6d5f5bf1751ba1927d8"
+    },
+    {
+      "name": "go",
+      "source": "github.com/vito/daggerverse/go@go/v0.0.1",
+      "pin": "f7223d2d82fb91622cbb7954177388d995a98d59"
+    }
+  ],
+  "source": "dagger"
+}
