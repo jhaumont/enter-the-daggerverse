@@ -2,10 +2,10 @@ name: CI hello
 on:
   pull_request:
     branches:
-      - 'main'
+      - "main"
   push:
     branches:
-      - 'main'
+      - "main"
 
 jobs:
   CI:
@@ -14,10 +14,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Call Dagger Function to publish
+
+      - name: Publish
         uses: dagger/dagger-for-github@8.0.0
         with:
-          version: "latest"
+          version: "0.18.3"
           verb: call
-          module: github.com/daggerverse/dagger-ghcr-demo@v0.1.5
-          args: publish --source=hello
+          workdir: hello
+          args: publish --source=.
+          # assumes the Dagger Cloud token is in
+          # a repository secret named DAGGER_CLOUD_TOKEN
+          # set via the GitHub UI/CLI
+          cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
