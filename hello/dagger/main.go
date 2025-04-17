@@ -29,7 +29,7 @@ func (m *Hello) Build(source *dagger.Directory) *dagger.Container {
 		WithEntrypoint([]string{"/usr/bin/hello"})
 }
 
-// Build a ready-to-use development environment
+// d Build a ready-to-use development environment
 func (m *Hello) BuildEnv() {
 	m.builder = dag.Go().FromVersion("1.23-alpine")
 }
