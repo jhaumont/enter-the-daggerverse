@@ -30,7 +30,7 @@ Voici les éléments à mettre en place pour réaliser le codelab sur votre mach
 - Installer le client [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.18.3`
   - Exemple pour linux:
     ```bash
-    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.3 $HOME/.local/bin sh
+    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.3 BIN_DIR=$HOME/.local/bin sh
     ```
 
 > [!TIP]
