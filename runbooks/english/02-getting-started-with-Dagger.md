@@ -17,7 +17,7 @@ cd hello
 
 > [!IMPORTANT]
 > All following commands are run in the `hello` folder from your terminal.
-
+dagger init --sdk=go --source=./dagger
 Init your Dagger module:
 ```bash
 dagger init --sdk=go --source=./dagger
