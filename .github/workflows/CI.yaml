@@ -12,5 +12,7 @@ jobs:
     name: Publish hello app
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
+      - name: Test
+        run: dagger call publish --source=.
