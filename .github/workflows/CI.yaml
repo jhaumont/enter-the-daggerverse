@@ -14,3 +14,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Call Dagger Function to publish
+        uses: dagger/dagger-for-github@8.0.0
+        with:
+          version: "latest"
+          verb: call
+          module: github.com/daggerverse/dagger-ghcr-demo@v0.1.5
+          args: publish --source=hello
