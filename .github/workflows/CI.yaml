@@ -23,6 +23,6 @@ jobs:
           workdir: hello
           args: publish --source=.
           # assumes the Dagger Cloud token is in
-          # a repositofry secret named DAGGER_CLOUD_TOKEN
+          # a repositofry secret named DAGGdER_CLOUD_TOKEN
           # set via the GitHub UI/CLI
           cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
