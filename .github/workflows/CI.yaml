@@ -2,10 +2,10 @@ name: CI hello
 on:
   pull_request:
     branches:
-      - 'main'
+      - 'Jules136'
   push:
     branches:
-      - 'main'
+      - 'Jules136'
 
 jobs:
   CI:
