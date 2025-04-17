@@ -1,0 +1,11 @@
+{
+  "name": "hello-sh",
+  "engineVersion": "v0.18.3",
+  "dependencies": [
+    {
+      "name": "git-info",
+      "source": "github.com/vbehar/daggerverse/git-info@v0.12.1",
+      "pin": "cc1e58c0400999415f0a4ee308b7ca13c12c0248"
+    }
+  ]
+}
