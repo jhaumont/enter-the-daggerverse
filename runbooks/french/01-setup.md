@@ -19,6 +19,18 @@ Dans la fenêtre de création du codespace, pensez à **changer le repository po
 
 ![](../codespace.png)
 
+La création de l'environnement codespace prend quelques minutes.
+
+> [!TIP]
+> Si la page de chargement reste bloquée, allez tout en bas de la page [Codespace](https://github.com/codespaces/) :
+> ![](../codespace-2.png)
+>
+> Si le statut est `Active`, le codespace est bien créé mais l'ihm est bloqué, peut-être à cause d'un trop grand nombre de connexions depuis la même adresse IP (dans le cas d'un codelab lors d'une conférence). Vous pouvez connecter le VSCode de votre machine directement à codespace.
+
+### Connecter à VSCode
+
+Vous pouvez connecter le VSCode de votre ordinateur à l'environnement codespace. Pour cela, suivez la [documentation officielle](https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code).
+
 ## Installation locale
 
 Voici les éléments à mettre en place pour réaliser le codelab sur votre machine :
