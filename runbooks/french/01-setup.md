@@ -27,10 +27,10 @@ Voici les éléments à mettre en place pour réaliser le codelab sur votre mach
 - Avoir Docker installé sur votre machine (via **Docker for Windows/Mac** ou **Rancher Desktop** pour Windows et Mac OS)
 - Installer un client [Git](https://git-scm.com/)
 - Installer la version `1.23.x` du langage [Go](https://go.dev/doc/install)
-- Installer le client [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.18.3`
+- Installer le client [Dagger](https://docs.dagger.io/install/) version `0.18.3`
   - Exemple pour linux:
     ```bash
-    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.3 $HOME/.local/bin sh
+    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.3 BIN_DIR=$HOME/.local/bin sh
     ```
 
 > [!TIP]
