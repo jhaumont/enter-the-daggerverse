@@ -85,7 +85,7 @@ Dorénavant, cette fonction ne retourne plus un container mais modifie l'instanc
 
 ### Modifier la fonction Build
 
-Remplacez la fonction `Build` par le code suivant dans le ficher `dagger/main.go` :
+Remplacez la fonction `Build` par le code suivant dans le ficher `.dagger/main.go` :
 ```go
 // Build the application container
 func (m *Hello) Build(source *dagger.Directory) *dagger.Container {
