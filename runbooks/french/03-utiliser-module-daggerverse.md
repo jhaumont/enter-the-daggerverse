@@ -54,7 +54,7 @@ Une autre solution est de regarder directement le code source : https://github.c
 
 ### Modifier la fonction BuildEnv
 
-Ajoutez un champ `builder` de type `*dagger.Go` dans la structure `Hello` dans le ficher `dagger/main.go` :
+Ajoutez un champ `builder` de type `*dagger.Go` dans la structure `Hello` dans le ficher `.dagger/main.go` :
 ```go
 type Hello struct {
 	builder *dagger.Go
