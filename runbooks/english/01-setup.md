@@ -22,14 +22,14 @@ In the codespace's creation's page, keep in mind to **change the repository name
 Codespace environnement can take few minutes.
 
 > [!TIP]
-> If codespace load page always show, go to bottom of [Codespace page](https://github.com/codespaces/) 
+> If the code space loading page is still displayed, ,scroll to bottom of [Codespace page](https://github.com/codespaces/) 
 > ![](../codespace-2.png)
 >
-> If status is `Active`, that means the codespace is ready, but web page is blacked maybe due to too many call from same IP addresses (is case of codelab with too many people). You can connect your local VSCode of you computer directly to codespace environnement.
+> If status is `Active`, that means the codespace is ready, but web page is blocked maybe due to too many call from same IP addresses (in case of codelab with too many people). You can connect your local VSCode (from your computer) directly to codespace environnement.
 
 ### Connect to VSCode
 
-You can connect your local VSCode of you computer directly to codespace environnement. To do that, please read [official documentation](https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code).
+You can connect your local VSCode (from your computer) directly to codespace environnement. To do that, please read [official documentation](https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code).
 
 ## Local installation
 
