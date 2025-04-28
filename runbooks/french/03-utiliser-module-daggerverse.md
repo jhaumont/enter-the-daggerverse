@@ -54,7 +54,7 @@ Une autre solution est de regarder directement le code source : https://github.c
 
 ### Modifier la fonction BuildEnv
 
-Ajoutez un champ `builder` de type `*dagger.Go` dans la structure `Hello` dans le ficher `dagger/main.go` :
+Ajoutez un champ `builder` de type `*dagger.Go` dans la structure `Hello` dans le ficher `.dagger/main.go` :
 ```go
 type Hello struct {
 	builder *dagger.Go
@@ -85,7 +85,7 @@ Dorénavant, cette fonction ne retourne plus un container mais modifie l'instanc
 
 ### Modifier la fonction Build
 
-Remplacez la fonction `Build` par le code suivant dans le ficher `dagger/main.go` :
+Remplacez la fonction `Build` par le code suivant dans le ficher `.dagger/main.go` :
 ```go
 // Build the application container
 func (m *Hello) Build(source *dagger.Directory) *dagger.Container {

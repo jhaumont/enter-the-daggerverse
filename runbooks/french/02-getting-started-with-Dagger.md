@@ -20,7 +20,7 @@ cd hello
 
 Initialisez votre module de Dagger :
 ```bash
-dagger init --sdk=go --source=./dagger
+dagger init --sdk=go --source=.dagger
 ```
 
 Cette commande va télécharger l'image du conteneur Dagger engine (liée à votre version du CLI), le démarrer et générer votre structre de module Dagger :
@@ -29,7 +29,7 @@ Cette commande va télécharger l'image du conteneur Dagger engine (liée à vot
   - Un fichier `main.go` qui va contenir le code de votre module,
   - Un ficher `dagger.gen.go` et un répertoire `internal` contenant le code utilitaire généré par Dagger,
 
-Dans le fichier `dagger/main.go`, remplacez le code existant par celui ci-dessous :
+Dans le fichier `.dagger/main.go`, remplacez le code existant par celui ci-dessous :
 
 ```go
 package main
@@ -84,7 +84,7 @@ return dag.Container().
 > [!WARNING]
 > Le fichier `dagger.gen.go` apparait comme ayant un problème de compilation dans VSCode (le fichier est rouge).
 > 
-> En changeant le contenu du fichier `dagger/main.go`, l'interface a évolué.
+> En changeant le contenu du fichier `.dagger/main.go`, l'interface a évolué.
 > 
 > Il faut regénérer le code Dagger du module, avec la commande ci-dessous :
 > ```bash
