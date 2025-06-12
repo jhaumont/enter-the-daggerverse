@@ -4,7 +4,7 @@
 {
 	"name": "Go Devcontainer",
   
-	"image": "adrienaury/go-devcontainer:v5.1.0",
+	"image": "adrienaury/go-devcontainer:v6.0.1",
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"customizations": {
