@@ -54,7 +54,7 @@ Another solution is to read directly the souce code: https://github.com/vito/dag
 
 ### Change BuildEnv function
 
-Add a `builder` field of type `*dagger.Go` to the `Hello` struct in file `dagger/main.go`:
+Add a `builder` field of type `*dagger.Go` to the `Hello` struct in file `.dagger/main.go`:
 ```go
 type Hello struct {
 	builder *dagger.Go
@@ -84,7 +84,7 @@ Now, this function no longer returns a container, but modifies `builder` instanc
 
 ### Update Build function
 
-Replace the `Build` function by bellow code in the file `dagger/main.go`:
+Replace the `Build` function by bellow code in the file `.dagger/main.go`:
 ```go
 // Build the application container
 func (m *Hello) Build(source *dagger.Directory) *dagger.Container {
