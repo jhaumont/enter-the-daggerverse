@@ -25,7 +25,7 @@ dagger init --sdk=go --source=.dagger
 
 Cette commande va télécharger l'image du conteneur Dagger engine (liée à votre version du CLI), le démarrer et générer votre structre de module Dagger :
 - Un fichier `dagger.json` de metadata,
-- Un répertoire `dagger` :
+- Un répertoire `.dagger` :
   - Un fichier `main.go` qui va contenir le code de votre module,
   - Un ficher `dagger.gen.go` et un répertoire `internal` contenant le code utilitaire généré par Dagger,
 
