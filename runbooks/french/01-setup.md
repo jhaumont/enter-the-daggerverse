@@ -19,6 +19,18 @@ Dans la fenêtre de création du codespace, pensez à **changer le repository po
 
 ![](../codespace.png)
 
+La création de l'environnement codespace prend quelques minutes.
+
+> [!TIP]
+> Si la page de chargement reste bloquée, allez tout en bas de la page [Codespace](https://github.com/codespaces/) :
+> ![](../codespace-2.png)
+>
+> Si le statut est `Active`, le codespace est bien créé mais l'ihm est bloqué, peut-être à cause d'un trop grand nombre de connexions depuis la même adresse IP (dans le cas d'un codelab lors d'une conférence). Vous pouvez connecter le VSCode de votre machine directement à codespace.
+
+### Connecter à VSCode
+
+Vous pouvez connecter le VSCode de votre ordinateur à l'environnement codespace. Pour cela, suivez la [documentation officielle](https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code).
+
 ## Installation locale
 
 Voici les éléments à mettre en place pour réaliser le codelab sur votre machine :
@@ -27,10 +39,10 @@ Voici les éléments à mettre en place pour réaliser le codelab sur votre mach
 - Avoir Docker installé sur votre machine (via **Docker for Windows/Mac** ou **Rancher Desktop** pour Windows et Mac OS)
 - Installer un client [Git](https://git-scm.com/)
 - Installer la version `1.23.x` du langage [Go](https://go.dev/doc/install)
-- Installer le client [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.18.3`
+- Installer le client [Dagger](https://docs.dagger.io/install/) version `0.18.3`
   - Exemple pour linux:
     ```bash
-    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.3 $HOME/.local/bin sh
+    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.3 BIN_DIR=$HOME/.local/bin sh
     ```
 
 > [!TIP]
