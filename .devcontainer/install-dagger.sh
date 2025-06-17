@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir -p "$HOME/.local/bin"
-curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.3 BIN_DIR=$HOME/.local/bin sh
+curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.10 BIN_DIR=$HOME/.local/bin sh
 sudo su <<EOF
 echo "alias ll='ls -al'" >> $HOME/.zshrc
 echo "PATH=$PATH:$HOME/.local/bin" >> $HOME/.zshrc

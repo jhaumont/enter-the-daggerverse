@@ -19,6 +19,18 @@ In the codespace's creation's page, keep in mind to **change the repository name
 
 ![](../codespace.png)
 
+Codespace environnement can take few minutes.
+
+> [!TIP]
+> If the code space loading page is still displayed, ,scroll to bottom of [Codespace page](https://github.com/codespaces/) 
+> ![](../codespace-2.png)
+>
+> If status is `Active`, that means the codespace is ready, but web page is blocked maybe due to too many call from same IP addresses (in case of codelab with too many people). You can connect your local VSCode (from your computer) directly to codespace environnement.
+
+### Connect to VSCode
+
+You can connect your local VSCode (from your computer) directly to codespace environnement. To do that, please read [official documentation](https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code).
+
 ## Local installation
 
 To run this codelab, your need install all of components bellow:
@@ -27,10 +39,10 @@ To run this codelab, your need install all of components bellow:
 - Install **Docker for Windows/Mac** or **Rancher Desktop**
 - Install [Git](https://git-scm.com/)
 - Install [Go](https://go.dev/doc/install) language `1.23.x`
-- Install [Dagger](https://docs.dagger.io/quickstart/cli/) version `0.18.3`
+- Install [Dagger](https://docs.dagger.io/install/) version `0.18.3`
   - Example for linux:
     ```bash
-    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.3 $HOME/.local/bin sh
+    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.3 BIN_DIR=$HOME/.local/bin sh
     ```
 
 > [!TIP]
