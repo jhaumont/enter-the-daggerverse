@@ -17,8 +17,6 @@ jobs:
 
       - name: Publish
         uses: dagger/dagger-for-github@8.0.0
-        env: # Or as an environment variable
-          DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
         with:
           version: "0.18.10"
           verb: call
@@ -27,5 +25,5 @@ jobs:
           # assumes the Dagger Cloud token is in
           # a repository secret named DAGGER_CLOUD_TOKEN
           # set via the GitHub UI/CLI
-          # cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
+          cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
 
