@@ -1,5 +1,6 @@
 name: CI hello
 on:
+  pull_request:
   push:
     branches:
       - "main"
