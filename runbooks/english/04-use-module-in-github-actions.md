@@ -28,4 +28,7 @@ You now have a CI pipeline for the `hello` application!
 
 The pipeline is executed on GitHub Action using our Dagger module! This allows you to use the same pipeline locally and in GitHub Actions.
 
+> [!TIP]
+> You can install the GitHub app Dagger inside your repository to link directly inside the PR the build traces on Dagger Cloud. CF https://github.com/apps/dagger-cloud
+
 Now, we will expore the Dagger shell, to do same but without any code: [Introducing Dagger Shell](./05-use-interactive-dagger-shell.md).

@@ -151,6 +151,12 @@ export DAGGER_CLOUD_TOKEN=<token>
 
 Pour ne plus avoir à le faire à chaque ouverture de session/terminal, il faut ajouter ce token à votre contexte (`.profile` ou autre).
 
+Ou plus simple, vous pouvez directement vous logger sur Dagger avec :
+
+```bash
+dagger login
+```
+
 ## Intéragir avec le résultat de votre fonction
 
 Lorsque votre fonction retourne un type "container", vous avez la possibilité d'interagir avec cette dernière pour inspecter son contenu.

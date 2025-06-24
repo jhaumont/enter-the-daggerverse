@@ -149,6 +149,13 @@ export DAGGER_CLOUD_TOKEN=<token>
 
 You can add this to your `.profile` (or anything else) to avoid entering it every time you close and open your shell.
 
+Or more simple, you can directly logging on Dagger :
+
+```bash
+dagger login
+```
+
+
 ## Interact with the result of your function
 
 When your function returns a container type, you can interact with it to inspect its content.
