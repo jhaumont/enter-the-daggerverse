@@ -14,10 +14,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Call Dagger Function
+      - name: Publish Dagger Function
         uses: dagger/dagger-for-github@8.0.0
         with:
-          version: "latest"
+          version: "0.18.10"
           verb: call
           args: publish --source=.
           workdir: hello
