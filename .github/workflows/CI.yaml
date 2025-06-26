@@ -20,4 +20,5 @@ jobs:
           version: "latest"
           verb: call
           args: publish --source=.
+          workdir: hello
           cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
