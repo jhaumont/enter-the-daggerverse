@@ -49,10 +49,10 @@ To run this codelab, your need install all of components bellow:
 - Install **Docker for Windows/Mac** or **Rancher Desktop**
 - Install [Git](https://git-scm.com/)
 - Install [Go](https://go.dev/doc/install) language `1.23.x`
-- Install [Dagger](https://docs.dagger.io/install/) version `0.18.10`
+- Install [Dagger](https://docs.dagger.io/install/) version `0.19.9`
   - Example for linux:
     ```bash
-    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.18.10 BIN_DIR=$HOME/.local/bin sh
+    curl -fsSL https://dl.dagger.io/dagger/install.sh | DAGGER_VERSION=0.19.9 BIN_DIR=$HOME/.local/bin sh
     ```
 
 > [!TIP]
