@@ -2,12 +2,12 @@
 
 Now we have the components of our CI pipeline, we're going to integrate them into a GitHub Action to automate our pipeline.
 
-To do this, you can use the official [Dagger GitHub Action](https://docs.dagger.io/integrations/github).
+To do this, you can use the official [Dagger GitHub Action](https://docs.dagger.io/getting-started/ci-integrations/github).
 
 > [!TIP]
 > Dagger integrates with many existing tools and CI systems.
 >
-> You can see the [list on Dagger documentation](https://docs.dagger.io/integrations)
+> You can see the [list on Dagger documentation](https://docs.dagger.io/getting-started)
 
 Create a new git branch (please replace `<branch_name>`):
 

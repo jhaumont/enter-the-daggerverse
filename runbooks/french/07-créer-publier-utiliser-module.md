@@ -51,7 +51,7 @@ Les éléments à votre dispositon pour construire cette fonction :
     -e "LOG_LEVEL"=info \
     -e "RENOVATE_REPOSITORIES=[\"<votre-pseudo-github>/enter-the-daggerverse\"]" \
     -e "RENOVATE_BASE_BRANCHES=[\"main\"]" \
-    renovate/renovate:38 --platform=github --onboarding=false
+    renovate/renovate:42 --platform=github --onboarding=false
     ```
 - L'interface de la fonction `RenovateScan` :
   - `repository` : string obligatoire
@@ -62,15 +62,15 @@ Les éléments à votre dispositon pour construire cette fonction :
 
 > [!NOTE]
 > Quelques liens intéressants pour vous aider :
-> - https://docs.dagger.io/manuals/developer/secrets/
+> - https://docs.dagger.io/extending/secrets
 > - https://pkg.go.dev/dagger.io/dagger#Container.WithExec
-> - https://docs.dagger.io/manuals/developer/functions/#optional-arguments
+> - https://docs.dagger.io/extending/arguments#optional-arguments
 
 > [!NOTE]
 > Pensez à exporter votre PAT (Personnal Access Token) GitHub dans votre shell pour vos tests :
 > ```bash
 > read RENOVATE_TOKEN
-> { paste GitLab access token here }
+> { paste GitHub access token here }
 > export RENOVATE_TOKEN
 > ```
 
@@ -82,7 +82,7 @@ Les éléments à votre dispositon pour construire cette fonction :
 > [!NOTE]
 > Cette partie sera réalisée par les animateurs en direct
 
-Suivez la documentation officielle : [Publishing Modules](https://docs.dagger.io/manuals/developer/publish-modules) et [Publish a Module](https://daggerverse.dev/publish).
+Suivez la documentation officielle : [Publish a Module](https://daggerverse.dev/publish).
 
 ## Utiliser votre module dans le pipeline
 
@@ -91,7 +91,7 @@ De la même manière que dans la partie précédente, nous allons construire une
 > [!NOTE]
 > Utilisez le module Renovate qui a déjà été publié sur le Daggerverse pour ce codelab
 >
-> La [documentation](https://docs.dagger.io/integrations/github) de l'intégration Dagger pour GitHub
+> La [documentation](https://docs.dagger.io/getting-started/ci-integrations/github) de l'intégration Dagger pour GitHub
 
 Créez le fichier de la GitHub Actions :
 ```bash

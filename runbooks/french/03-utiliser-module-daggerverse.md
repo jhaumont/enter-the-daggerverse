@@ -31,7 +31,7 @@ dagger install github.com/vito/daggerverse/go@v0.0.1
 ```
 
 > [!NOTE]
-> Il est aussi possible d'utiliser des modules non disponibles dans le Daggerverse (ie repository git privés). Plus d'informations dans la documentation officielle [Using Modules from Remote Repositories](https://docs.dagger.io/api/remote-modules).
+> Il est aussi possible d'utiliser des modules non disponibles dans le Daggerverse (ie repository git privés). Plus d'informations dans la documentation officielle [Using Modules from Remote Repositories](https://docs.dagger.io/extending/module-dependencies#private-modules).
 
 Pour découvrir le module, afficher son aide :
 ```bash
@@ -105,7 +105,7 @@ Puis la fonction `Build` du module Go importé précédemment (le module qui a �
 L'option `Static: true` est l'équivalant de `WithEnvVariable("CGO_ENABLED", "0")` dans la version précédent de la fonction `BuildEnv`.
 
 > [!NOTE]
-> Dans Dagger, les arguments d'une fonction peuvent être [optionnels](https://docs.dagger.io/manuals/developer/functions/#optional-arguments) en l'indiquant par un commentaire dans le code de la fonction.
+> Dans Dagger, les arguments d'une fonction peuvent être [optionnels](https://docs.dagger.io/extending/arguments#optional-arguments) en l'indiquant par un commentaire dans le code de la fonction.
 >
 > Il est aussi possible de donner une valeur par défaut.
 

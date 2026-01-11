@@ -2,12 +2,12 @@
 
 Maintenant que nous avons les composants de notre pipeline de CI, nous allons les intégrer à une GitHub action pour automatiser notre pipeline.
 
-Pour se faire, il existe une integration officielle de Dagger pour GitHub actions : https://docs.dagger.io/integrations/github
+Pour se faire, il existe une integration officielle de Dagger pour GitHub actions : https://docs.dagger.io/getting-started/ci-integrations/github
 
 > [!TIP]
 > Il existe un grand nombre d'integration Dagger dans divers outils de build & CI.
 >
-> La liste exhaustive se trouve ici: https://docs.dagger.io/integrations
+> La liste exhaustive se trouve ici: https://docs.dagger.io/getting-started
 
 Créer une nouvelle branche Git (remplacer `<nom_branche>`) :
 

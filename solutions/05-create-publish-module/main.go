@@ -20,7 +20,7 @@ func (m *Renovate) RenovateScan(
 	logLevel string,
 ) (string, error) {
 	return dag.Container().
-		From("renovate/renovate:38").
+		From("renovate/renovate:42").
 		WithSecretVariable("RENOVATE_TOKEN", renovateToken).
 		WithEnvVariable("RENOVATE_REPOSITORIES", repository).
 		WithEnvVariable("RENOVATE_BASE_BRANCHES", baseBranch).

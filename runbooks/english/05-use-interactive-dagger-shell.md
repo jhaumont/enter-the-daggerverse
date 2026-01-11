@@ -122,7 +122,22 @@ EOF
 
 You got this error message:
 ```
-Error: input: container.from.withExec.withDirectory.id process "sh -c echo titi > /data/test" did not complete successfully: exit code: 1
+✔ connect 0.2s
+✔ detect module: . 0.1s
+✔ loading type definitions 0.3s
+✘ with-directory 0.2s ERROR
+✘ withExec sh -c 'echo titi > /data/test' 0.2s ERROR
+sh: can't create /data/test: nonexistent directory                                                                                                                                                                                                                          
+! exit code: 1
+
+$ container: Container! 0.0s CACHED
+$ .from(address: "alpine"): Container! 0.0s CACHED
+✘ withExec sh -c 'echo titi > /data/test' 0.2s ERROR
+! exit code: 1
+✔ .withDirectory(
+  ┆ path: "/data/"
+  ┆ source: Address.directory: Directory!
+  ): Container! 0.0s
 ```
 
 Because, order of parameters is important. Swap lines `with-directory` and `with-exec`:

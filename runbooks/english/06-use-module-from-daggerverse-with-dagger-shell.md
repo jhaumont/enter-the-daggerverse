@@ -34,7 +34,7 @@ The last line shows that `git-info` is loaded.
 
 Now use this module, to get current git ref:
 ```bash
-dagger <<< "git-info . | ref"
+dagger <<< "git-info ../ | ref"
 ```
 
 With the result:

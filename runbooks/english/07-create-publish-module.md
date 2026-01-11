@@ -51,7 +51,7 @@ The elements at your disposal to build this function:
     -e "LOG_LEVEL"=info \
     -e "RENOVATE_REPOSITORIES=[\"<votre-pseudo-github>/enter-the-daggerverse\"]" \
     -e "RENOVATE_BASE_BRANCHES=[\"main\"]" \
-    renovate/renovate:38 --platform=github --onboarding=false
+    renovate/renovate:42 --platform=github --onboarding=false
     ```
 - `RenovateScan` function interface:
   - `repository`: mandatory string
@@ -62,15 +62,15 @@ The elements at your disposal to build this function:
 
 > [!NOTE]
 > Somes useful links to help:
-> - https://docs.dagger.io/manuals/developer/secrets/
+> - https://docs.dagger.io/extending/secrets
 > - https://pkg.go.dev/dagger.io/dagger#Container.WithExec
-> - https://docs.dagger.io/manuals/developer/functions/#optional-arguments
+> - https://docs.dagger.io/extending/arguments#optional-arguments
 
 > [!NOTE]
 > Don't forget to export your GitHub PAT (Personnal Access Token) in your shell to run the tests:
 > ```bash
 > read RENOVATE_TOKEN
-> { paste GitLab access token here }
+> { paste Github access token here }
 > export RENOVATE_TOKEN
 > ```
 
@@ -82,7 +82,7 @@ The elements at your disposal to build this function:
 > [!NOTE]
 > This part will only be done by speakers live
 
-Follow official documentation: [Publishing Modules](https://docs.dagger.io/manuals/developer/publish-modules) and [Publish a Module](https://daggerverse.dev/publish).
+Follow official documentation: [Publish a Module](https://daggerverse.dev/publish).
 
 ## Use your module in the pipeline
 
@@ -91,7 +91,7 @@ Like before, we create a GitHub Action.
 > [!NOTE]
 > Use Renovate module already published on Daggerverse for this codelab
 >
-> The [documentation](https://docs.dagger.io/integrations/github) of Dagger integration for GitHub
+> The [documentation](https://docs.dagger.io/getting-started/ci-integrations/github) of Dagger integration for GitHub
 
 Create GitHub Actions' file:
 ```bash
