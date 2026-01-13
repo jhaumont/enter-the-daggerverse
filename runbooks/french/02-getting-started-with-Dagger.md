@@ -198,7 +198,7 @@ dagger call build --source=. terminal
 > [!NOTE]
 > Mais d'où vient la commande `terminal` introuvable lorsqu'on lance la commande `dagger --help` ?
 >
-> Et bien on le trouve au détour de la documentation dans le [User Manual](https://docs.dagger.io/extending/module-dependencies#private-modules)
+> Et bien on le trouve au détour de la documentation dans le [User Manual](https://docs.dagger.io/extending/chaining/#execute-commands-in-containers)
 
 Vérifiez que le binaire de l'application est bien présent :
 ```bash

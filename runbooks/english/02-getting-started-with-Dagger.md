@@ -197,7 +197,7 @@ dagger call build --source=. terminal
 > [!NOTE]
 > But, wait a minute! Where did the `terminal` command come from? I can't find it with `dagger --help`?
 >
-> It's a good question. You can find it when you read the [User Manual](https://docs.dagger.io/extending/module-dependencies#private-modules)
+> It's a good question. You can find it when you read the [User Manual](https://docs.dagger.io/extending/chaining/#execute-commands-in-containers)
 
 Please check that the binary of application is here:
 ```bash
