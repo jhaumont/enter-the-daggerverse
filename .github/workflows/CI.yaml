@@ -19,7 +19,7 @@ jobs:
         with:
           version: "latest"
           verb: call
-          module: github.com/daggerverse/dagger-ghcr-demo@v0.1.5
+          workdir: hello
           args: publish --source=.
           # assumes the Dagger Cloud token is in
           # a repository secret named DAGGER_CLOUD_TOKEN
